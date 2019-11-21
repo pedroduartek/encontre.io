@@ -1,3 +1,7 @@
 .navbar {
   font-weight: bold;
 }
+
+.dropdown, .dropdown-item{
+  cursor: pointer;
+}

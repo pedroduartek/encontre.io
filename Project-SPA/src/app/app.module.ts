@@ -9,10 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorIntercepetorProvider } from './_services/error.interceptor';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, NavComponent, RegisterComponent, HomeComponent],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    BsDropdownModule.forRoot()
+  ],
   providers: [AuthService, ErrorIntercepetorProvider],
   bootstrap: [AppComponent]
 })
