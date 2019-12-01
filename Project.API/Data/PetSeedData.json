@@ -1,0 +1,142 @@
+[
+  {
+    "UserId": 1,
+    "City": "Munjor",
+    "Country": "Belgium",
+    "Color": "black",
+    "Size": "medium",
+    "Type": "bird",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/setter-gordon/n02101006_1551.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 5,
+    "City": "Echo",
+    "Country": "Iceland",
+    "Color": "gray",
+    "Size": "big",
+    "Type": "bird",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_879.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 5,
+    "City": "Mayfair",
+    "Country": "Senegal",
+    "Color": "black",
+    "Size": "big",
+    "Type": "bird",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/bouvier/n02106382_276.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "City": "Groveville",
+    "Country": "Paraguay",
+    "Color": "gold",
+    "Size": "medium",
+    "Type": "dog",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_4036.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "City": "Vale",
+    "Country": "US Minor Outlying Islands",
+    "Color": "black",
+    "Size": "big",
+    "Type": "cat",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/basenji/n02110806_3331.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "City": "Crawfordsville",
+    "Country": "Benin",
+    "Color": "black",
+    "Size": "big",
+    "Type": "cat",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/samoyed/n02111889_597.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "City": "Wright",
+    "Country": "Uganda",
+    "Color": "brown",
+    "Size": "big",
+    "Type": "dog",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_6730.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "City": "Grayhawk",
+    "Country": "Russian Federation",
+    "Color": "gray",
+    "Size": "medium",
+    "Type": "bird",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_3394.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 3,
+    "City": "Staples",
+    "Country": "Austria",
+    "Color": "gray",
+    "Size": "medium",
+    "Type": "cat",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/weimaraner/n02092339_6410.jpg",
+        "isMain": "true"
+      }
+    ]
+  },
+  {
+    "UserId": 5,
+    "City": "Konterra",
+    "Country": "Brunei Darussalam",
+    "Color": "brown",
+    "Size": "small",
+    "Type": "cat",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/frise-bichon/jh-ezio-1.jpg",
+        "isMain": "true"
+      }
+    ]
+  }
+]

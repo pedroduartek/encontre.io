@@ -18,6 +18,7 @@ using System.Text;
 using Microsoft.AspNetCore.Diagnostics;
 using Project.API.Helpers;
 using Microsoft.AspNetCore.Http;
+using AutoMapper;
 
 namespace Project.API
 {
@@ -34,9 +35,13 @@ namespace Project.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(opt =>
+                opt.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
             services.AddCors();
+            services.AddAutoMapper(typeof(Repository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IRepository, Repository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
