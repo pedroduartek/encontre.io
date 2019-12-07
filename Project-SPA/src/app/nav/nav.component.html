@@ -7,7 +7,7 @@
         <a class="nav-link" [routerLink]="['/pets']">Lost Pets</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/regists']">Your registered pets</a>
+        <a class="nav-link" [routerLink]="['/regists', this.authService.decodedToken.nameid]">Your registered pets</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/messages']">Messages</a>

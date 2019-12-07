@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class=" card-img-top img-thumbnail" src="{{pet.photoUrl}}" alt="{{pet.type}}">
+        <div class="card-body">
+          <div>
+            <strong>Location:</strong>
+            <p>{{pet.city}}, {{pet.country}}</p>
+          </div>
+          <div>
+            <strong>Added in:</strong>
+            <p>{{pet.dateAdded}}</p>
+          </div>
+          <div>
+            <strong>Added by:</strong>
+            <p>{{pet.user.username | titlecase}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button class="btn btn-primary w-100">Folow</button>
+            <button class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+        <tabset class="member-tabset">
+          <tab heading="Details">
+            <h4>Description</h4>
+            <p>{{pet.description}}</p>
+          </tab>
+          <tab heading="Photos">
+            <ngx-gallery [options]='galleryOptions' [images]='galleryImages'></ngx-gallery>
+          </tab>
+          <tab heading="Messages">
+            <p>messages will go here</p>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>

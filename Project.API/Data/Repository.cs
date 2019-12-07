@@ -26,7 +26,7 @@ namespace Project.API.Data
 
         public async Task<Pet> GetPet(int id)
         {
-            var pet = await _context.Pets.Include(p => p.Photos).FirstOrDefaultAsync(p => p.Id == id);
+            var pet = await _context.Pets.Include(p => p.Photos).Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id);
             return pet;
         }
 
@@ -46,6 +46,12 @@ namespace Project.API.Data
         {
             var users = await _context.Users.Include(u => u.Photos).ToListAsync();
             return users;
+        }
+
+        public async Task<IEnumerable<Pet>> GetUsersPets(int id)
+        {
+            var pets = await _context.Pets.Include(p => p.Photos).Where(p => p.UserId == id).ToListAsync();
+            return pets;
         }
 
         public async Task<bool> SaveAll()

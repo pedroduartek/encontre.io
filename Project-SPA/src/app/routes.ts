@@ -2,8 +2,12 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { PetListComponent } from './pet-list/pet-list.component';
+import { PetListComponent } from './pets/pet-list/pet-list.component';
 import { RegistListComponent } from './regist-list/regist-list.component';
+import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
+import { PetListResolver } from './_resolvers/pet-list.resolver';
+import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
+import { UsersPetsResolver } from './_resolvers/users-pets.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,9 +16,19 @@ export const appRoutes: Routes = [
     runGuardsAndResolvers: 'always',
     canActivate: [AuthGuard],
     children: [
-      { path: 'pets', component: PetListComponent },
+      {
+        path: 'pets', component: PetListComponent,
+        resolve: { pets: PetListResolver }
+      },
+      {
+        path: 'pets/:id', component: PetDetailComponent,
+        resolve: { pet: PetDetailResolver }
+      },
       { path: 'messages', component: MessagesComponent },
-      { path: 'regists', component: RegistListComponent }
+      {
+        path: 'regists/:id', component: RegistListComponent,
+        resolve: { pets: UsersPetsResolver }
+      }
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

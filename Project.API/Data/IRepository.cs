@@ -12,6 +12,7 @@ namespace Project.API.Data
         Task<User> GetUser(int id);
         Task<IEnumerable<Pet>> GetPets();
         Task<Pet> GetPet(int id);
+        Task<IEnumerable<Pet>> GetUsersPets(int id);
         Task<bool> SaveAll();
         
     }

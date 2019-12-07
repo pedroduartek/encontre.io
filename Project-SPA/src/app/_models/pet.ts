@@ -1,4 +1,5 @@
 import { Photo } from './photo';
+import { User } from './user';
 
 export interface Pet {
     id: number;
@@ -8,6 +9,9 @@ export interface Pet {
     size: string;
     type: string;
     photoUrl: string;
+    dateAdded: Date;
+    user?: User;
+    description?: string;
     userId?: number;
     photos?: Photo[];
 }

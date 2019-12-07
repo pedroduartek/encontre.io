@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Pet } from '../_models/pet';
+
 
 @Component({
   selector: 'app-regist-list',
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./regist-list.component.css']
 })
 export class RegistListComponent implements OnInit {
+  pets: Pet[];
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.pets = data['pets'];
+    })
   }
 
 }

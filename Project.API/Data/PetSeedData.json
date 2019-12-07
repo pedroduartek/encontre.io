@@ -1,141 +1,301 @@
 [
   {
-    "UserId": 1,
-    "City": "Munjor",
-    "Country": "Belgium",
-    "Color": "black",
-    "Size": "medium",
-    "Type": "bird",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/setter-gordon/n02101006_1551.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
     "UserId": 5,
-    "City": "Echo",
-    "Country": "Iceland",
-    "Color": "gray",
-    "Size": "big",
-    "Type": "bird",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_879.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
-    "UserId": 5,
-    "City": "Mayfair",
-    "Country": "Senegal",
-    "Color": "black",
-    "Size": "big",
-    "Type": "bird",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/bouvier/n02106382_276.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
-    "UserId": 2,
-    "City": "Groveville",
-    "Country": "Paraguay",
-    "Color": "gold",
-    "Size": "medium",
+    "Country": "Viet Nam",
+    "City": "Henrietta",
+    "Color": "green",
     "Type": "dog",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/bullterrier-staffordshire/n02093256_4036.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
-    "UserId": 1,
-    "City": "Vale",
-    "Country": "US Minor Outlying Islands",
-    "Color": "black",
+    "Street": "Lott Avenue",
     "Size": "big",
-    "Type": "cat",
     "Photos": [
       {
-        "url": "https://images.dog.ceo/breeds/basenji/n02110806_3331.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
-    "UserId": 2,
-    "City": "Crawfordsville",
-    "Country": "Benin",
-    "Color": "black",
-    "Size": "big",
-    "Type": "cat",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/samoyed/n02111889_597.jpg",
-        "isMain": "true"
-      }
-    ]
-  },
-  {
-    "UserId": 2,
-    "City": "Wright",
-    "Country": "Uganda",
-    "Color": "brown",
-    "Size": "big",
-    "Type": "dog",
-    "Photos": [
-      {
-        "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_6730.jpg",
-        "isMain": "true"
+        "url": "https://images.dog.ceo/breeds/redbone/n02090379_3711.jpg",
+        "isMain": true
       }
     ]
   },
   {
     "UserId": 4,
-    "City": "Grayhawk",
-    "Country": "Russian Federation",
-    "Color": "gray",
-    "Size": "medium",
-    "Type": "bird",
+    "Country": "Grenada",
+    "City": "Bascom",
+    "Color": "green",
+    "Type": "cat",
+    "Street": "Lawn Court",
+    "Size": "smal",
     "Photos": [
       {
-        "url": "https://images.dog.ceo/breeds/terrier-kerryblue/n02093859_3394.jpg",
-        "isMain": "true"
+        "url": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_897.jpg",
+        "isMain": true
       }
     ]
   },
   {
     "UserId": 3,
-    "City": "Staples",
-    "Country": "Austria",
-    "Color": "gray",
-    "Size": "medium",
+    "Country": "Falkland Islands (Malvinas)",
+    "City": "Wanamie",
+    "Color": "brown",
     "Type": "cat",
+    "Street": "Matthews Court",
+    "Size": "big",
     "Photos": [
       {
-        "url": "https://images.dog.ceo/breeds/weimaraner/n02092339_6410.jpg",
-        "isMain": "true"
+        "url": "https://images.dog.ceo/breeds/appenzeller/n02107908_4190.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Slovenia",
+    "City": "Courtland",
+    "Color": "white",
+    "Type": "bird",
+    "Street": "Beverly Road",
+    "Size": "smal",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_2513.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Argentina",
+    "City": "Emison",
+    "Color": "green",
+    "Type": "cat",
+    "Street": "Irving Avenue",
+    "Size": "big",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/retriever-golden/n02099601_1768.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Reunion",
+    "City": "Advance",
+    "Color": "green",
+    "Type": "dog",
+    "Street": "Hunts Lane",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/mexicanhairless/n02113978_697.jpg",
+        "isMain": true
       }
     ]
   },
   {
     "UserId": 5,
-    "City": "Konterra",
-    "Country": "Brunei Darussalam",
-    "Color": "brown",
-    "Size": "small",
-    "Type": "cat",
+    "Country": "Togo",
+    "City": "Darbydale",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Exeter Street",
+    "Size": "smal",
     "Photos": [
       {
-        "url": "https://images.dog.ceo/breeds/frise-bichon/jh-ezio-1.jpg",
-        "isMain": "true"
+        "url": "https://images.dog.ceo/breeds/schnauzer-giant/n02097130_32.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Tajikistan",
+    "City": "Kent",
+    "Color": "green",
+    "Type": "dog",
+    "Street": "Nolans Lane",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/briard/n02105251_3436.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Pitcairn",
+    "City": "Stonybrook",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Scott Avenue",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_7130.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Somalia",
+    "City": "Ellerslie",
+    "Color": "green",
+    "Type": "dog",
+    "Street": "Croton Loop",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/dachshund/dachshund-in-jacket.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "Country": "Micronesia",
+    "City": "Orovada",
+    "Color": "green",
+    "Type": "bird",
+    "Street": "Hill Street",
+    "Size": "smal",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/dane-great/n02109047_23814.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 3,
+    "Country": "Botswana",
+    "City": "Loyalhanna",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Ford Street",
+    "Size": "smal",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_6715.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 5,
+    "Country": "Korea (South)",
+    "City": "Waverly",
+    "Color": "green",
+    "Type": "bird",
+    "Street": "Willoughby Street",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/sheepdog-english/n02105641_7902.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "Country": "Montserrat",
+    "City": "Emory",
+    "Color": "brown",
+    "Type": "cat",
+    "Street": "Walker Court",
+    "Size": "smal",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_101.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "Country": "Hong Kong",
+    "City": "Jamestown",
+    "Color": "green",
+    "Type": "dog",
+    "Street": "Fay Court",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/pembroke/n02113023_4310.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 3,
+    "Country": "Barbados",
+    "City": "Rivereno",
+    "Color": "green",
+    "Type": "cat",
+    "Street": "Livonia Avenue",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/affenpinscher/n02110627_11584.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Kiribati",
+    "City": "Tivoli",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Lincoln Terrace",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/keeshond/n02112350_10343.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Lebanon",
+    "City": "Springdale",
+    "Color": "brown",
+    "Type": "dog",
+    "Street": "Cambridge Place",
+    "Size": "big",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/dane-great/n02109047_282.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "Country": "Austria",
+    "City": "Iberia",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Bay Parkway",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/malamute/n02110063_16713.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Suriname",
+    "City": "Hiseville",
+    "Color": "green",
+    "Type": "bird",
+    "Street": "Madison Place",
+    "Size": "medium",
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/mix/IMG_2840.jpg",
+        "isMain": true
       }
     ]
   }
