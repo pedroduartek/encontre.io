@@ -44,7 +44,7 @@ namespace Project.API.Data
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await _context.Users.Include(u => u.Photos).ToListAsync();
+            var users = await _context.Users.Include(u => u.RegisteredPets).ToListAsync();
             return users;
         }
 

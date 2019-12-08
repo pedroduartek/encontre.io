@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pet } from 'src/app/_models/pet';
-import { PetService } from 'src/app/_services/pet.service';
-import { AlertifyService } from 'src/app/_services/alertify.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgxGalleryOptions, NgxGalleryImage, NgxGalleryAnimation } from 'ngx-gallery';
+import { AuthService } from 'src/app/_services/auth.service';
 
 
 
@@ -17,7 +16,7 @@ export class PetDetailComponent implements OnInit {
   galleryOptions: NgxGalleryOptions[];
   galleryImages: NgxGalleryImage[];
 
-  constructor(private petService: PetService, private alertify: AlertifyService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, public authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {

@@ -16,6 +16,6 @@ namespace Project.API.Dtos
         public string Gender { get; set; }
         public string PhotoUrl { get; set; }
         public ICollection<UserPhotoForDetailedDto> Photos { get; set; }
-        public ICollection<Pet> RegisteredPets { get; set; }
+        public ICollection<PetForListDto> RegisteredPets { get; set; }
     }
 }

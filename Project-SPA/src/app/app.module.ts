@@ -24,6 +24,9 @@ import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
 import { AuthGuard } from './_guards/auth.guard';
 import { PetService } from './_services/pet.service';
 import { UsersPetsResolver } from './_resolvers/users-pets.resolver';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserService } from './_services/user.service';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -47,7 +50,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       PetListComponent,
       RegistListComponent,
       PetCardComponent,
-      PetDetailComponent
+      PetDetailComponent,
+      UserDetailComponent
    ],
    imports: [
       BrowserModule,
@@ -59,11 +63,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       NgxGalleryModule,
       JwtModule.forRoot({
          config: {
-            tokenGetter: getToken,
-            whitelistedDomains: ['localhost:5000'],
-            blacklistedRoutes: ['localhost:5000/api/auth']
+           tokenGetter: getToken,
+           whitelistedDomains: ['localhost:5000'],
+           blacklistedRoutes: ['localhost:5000/api/auth']
          },
-      })
+       })
    ],
    providers: [
       AuthService,
@@ -72,7 +76,9 @@ export class CustomHammerConfig extends HammerGestureConfig {
       AuthGuard,
       PetDetailResolver,
       UsersPetsResolver,
+      UserDetailResolver,
       PetService,
+      UserService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [

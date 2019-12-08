@@ -6,7 +6,7 @@ namespace Project.API.Dtos
     public class PetForDetailedDto
     {
         public int Id { get; set; }
-        public User User { get; set; }
+        public UserForListDto User { get; set; }
         public int UserId { get; set; }
         public string Country { get; set; }
         public string City { get; set; }

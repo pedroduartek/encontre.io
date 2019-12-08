@@ -14,13 +14,22 @@
           </div>
           <div>
             <strong>Added by:</strong>
-            <p>{{pet.user.username | titlecase}}</p>
+            <div *ngIf="pet.user.username === this.authService.decodedToken.unique_name">
+              You
+            </div>
+            <div *ngIf="pet.user.username != this.authService.decodedToken.unique_name">
+              <a [routerLink]="['/users/', pet.userId]">
+                <p>
+                  {{pet.user.username | titlecase}}
+                </p>
+              </a>
+            </div>
           </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">
-            <button class="btn btn-primary w-100">Folow</button>
-            <button class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
+            <button [disabled]="pet.user.username === this.authService.decodedToken.unique_name" class="btn btn-primary w-100" >Folow</button>
+            <button  [disabled]="pet.user.username === this.authService.decodedToken.unique_name" class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
           </div>
         </div>
       </div>

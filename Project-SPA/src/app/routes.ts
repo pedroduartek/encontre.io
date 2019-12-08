@@ -8,6 +8,8 @@ import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 import { PetListResolver } from './_resolvers/pet-list.resolver';
 import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
 import { UsersPetsResolver } from './_resolvers/users-pets.resolver';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +30,10 @@ export const appRoutes: Routes = [
       {
         path: 'regists/:id', component: RegistListComponent,
         resolve: { pets: UsersPetsResolver }
+      },
+      {
+        path: 'users/:id', component: UserDetailComponent,
+        resolve: { user: UserDetailResolver }
       }
     ]
   },

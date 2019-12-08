@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="container mt-5">
+        <div class="row">
+          <div *ngFor="let pet of user.registeredPets" class="col-lg-2 col-md-3 col-sm-6">
+            <app-pet-card [pet]="pet"></app-pet-card>
+            <p>{{pet.photoUrl}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <img class=" card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
+        <div class="card-body">
+          <div>
+            <strong>Location:</strong>
+            <p>{{user.city}}, {{user.country}}</p>
+          </div>
+          <div>
+            <strong>Last active:</strong>
+            <p>{{user.lastActive}}</p>
+          </div>
+          <div>
+            <strong>Member since:</strong>
+            <p>{{user.created}}</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <button [disabled]="user.username === this.authService.decodedToken.unique_name"
+              class="btn btn-primary w-100">Folow</button>
+            <button [disabled]="user.username === this.authService.decodedToken.unique_name"
+              class="btn btn-success w-100">Message {{user.username | titlecase}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

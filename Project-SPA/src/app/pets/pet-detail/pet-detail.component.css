@@ -14,3 +14,7 @@
     background-color: #FFF;
     border-top: none;
 }
+
+button:disabled{
+    background-color: gray;
+}
