@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pet } from '../_models/pet';
-
+import { Pet } from 'src/app/_models/pet';
 
 @Component({
-  selector: 'app-regist-list',
-  templateUrl: './regist-list.component.html',
-  styleUrls: ['./regist-list.component.css']
+  selector: 'app-user-pets',
+  templateUrl: './user-pets.component.html',
+  styleUrls: ['./user-pets.component.css']
 })
-export class RegistListComponent implements OnInit {
+export class UserPetsComponent implements OnInit {
   pets: Pet[];
 
   constructor(private route: ActivatedRoute) { }

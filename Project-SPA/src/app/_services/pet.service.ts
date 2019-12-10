@@ -23,7 +23,7 @@ export class PetService {
   }
 
   getUsersPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'userspets/' + id);
+    return this.http.get<Pet[]>(this.baseUrl + 'userpets/' + id);
   }
 
 }

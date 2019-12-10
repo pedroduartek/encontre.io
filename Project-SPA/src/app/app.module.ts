@@ -15,7 +15,6 @@ import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { PetListComponent } from './pets/pet-list/pet-list.component';
-import { RegistListComponent } from './regist-list/regist-list.component';
 import { PetCardComponent } from './pets/pet-card/pet-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
@@ -23,10 +22,13 @@ import { PetListResolver } from './_resolvers/pet-list.resolver';
 import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
 import { AuthGuard } from './_guards/auth.guard';
 import { PetService } from './_services/pet.service';
-import { UsersPetsResolver } from './_resolvers/users-pets.resolver';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserService } from './_services/user.service';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { UserPetsResolver } from './_resolvers/user-pets.resolver';
+import { UserPetsComponent } from './user/user-pets/user-pets.component';
+import { UserEditResolver } from './_resolvers/user-edit.resolver';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -35,10 +37,10 @@ export function getToken() {
 //bug fix for ngx-gallery with angular 8
 export class CustomHammerConfig extends HammerGestureConfig {
    overrides = {
-     pinch: { enable: false },
-     rotate: { enable: false }
+      pinch: { enable: false },
+      rotate: { enable: false }
    };
- }
+}
 
 @NgModule({
    declarations: [
@@ -48,10 +50,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       HomeComponent,
       MessagesComponent,
       PetListComponent,
-      RegistListComponent,
       PetCardComponent,
       PetDetailComponent,
-      UserDetailComponent
+      UserDetailComponent,
+      UserPetsComponent,
+      UserEditComponent
    ],
    imports: [
       BrowserModule,
@@ -63,11 +66,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       NgxGalleryModule,
       JwtModule.forRoot({
          config: {
-           tokenGetter: getToken,
-           whitelistedDomains: ['localhost:5000'],
-           blacklistedRoutes: ['localhost:5000/api/auth']
+            tokenGetter: getToken,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/auth']
          },
-       })
+      })
    ],
    providers: [
       AuthService,
@@ -75,9 +78,10 @@ export class CustomHammerConfig extends HammerGestureConfig {
       PetListResolver,
       AuthGuard,
       PetDetailResolver,
-      UsersPetsResolver,
+      UserPetsResolver,
       UserDetailResolver,
       PetService,
+      UserEditResolver,
       UserService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],

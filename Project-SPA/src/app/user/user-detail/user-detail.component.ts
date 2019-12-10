@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../_models/user';
-import { Pet } from '../_models/pet';
+import { User } from '../../_models/user';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../_services/auth.service';
+import { AuthService } from '../../_services/auth.service';
+import { Pet } from 'src/app/_models/pet';
 
 @Component({
   selector: 'app-user-detail',

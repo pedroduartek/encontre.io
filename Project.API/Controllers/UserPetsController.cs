@@ -11,11 +11,11 @@ namespace Project.API.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersPetsController : ControllerBase
+    public class UserPetsController : ControllerBase
     {
         private readonly IRepository _repo;
         private readonly IMapper _mapper;
-        public UsersPetsController(IRepository repo, IMapper mapper)
+        public UserPetsController(IRepository repo, IMapper mapper)
         {
             _mapper = mapper;
             _repo = repo;

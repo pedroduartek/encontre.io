@@ -3,13 +3,15 @@ import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PetListComponent } from './pets/pet-list/pet-list.component';
-import { RegistListComponent } from './regist-list/regist-list.component';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
 import { PetListResolver } from './_resolvers/pet-list.resolver';
 import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
-import { UsersPetsResolver } from './_resolvers/users-pets.resolver';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { UserPetsResolver } from './_resolvers/user-pets.resolver';
+import { UserPetsComponent } from './user/user-pets/user-pets.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserEditResolver } from './_resolvers/user-edit.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,12 +30,16 @@ export const appRoutes: Routes = [
       },
       { path: 'messages', component: MessagesComponent },
       {
-        path: 'regists/:id', component: RegistListComponent,
-        resolve: { pets: UsersPetsResolver }
+        path: 'user/pets/:id', component: UserPetsComponent,
+        resolve: { pets: UserPetsResolver }
       },
       {
         path: 'users/:id', component: UserDetailComponent,
         resolve: { user: UserDetailResolver }
+      },
+      {
+        path: 'user/edit', component: UserEditComponent,
+        resolve: { user: UserEditResolver }
       }
     ]
   },
