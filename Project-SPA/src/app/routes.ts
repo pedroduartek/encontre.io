@@ -12,6 +12,7 @@ import { UserPetsResolver } from './_resolvers/user-pets.resolver';
 import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,7 +40,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'user/edit', component: UserEditComponent,
-        resolve: { user: UserEditResolver }
+        resolve: { user: UserEditResolver }, canDeactivate: [PreventUnsavedChanges]
       }
     ]
   },
