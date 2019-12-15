@@ -26,4 +26,8 @@ export class PetService {
     return this.http.get<Pet[]>(this.baseUrl + 'userpets/' + id);
   }
 
+  updatePet(id: number, pet: Pet) {
+    return this.http.put(this.baseUrl + 'pets/' + id, pet);
+  }
+
 }
