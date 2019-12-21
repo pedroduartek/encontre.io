@@ -5,6 +5,14 @@
         <img class=" card-img-top img-thumbnail" src="{{pet.photoUrl}}" alt="{{pet.type}}">
         <div class="card-body">
           <div>
+            <strong>Type:</strong>
+            <p>{{pet.type | titlecase}}</p>
+          </div>
+          <div>
+            <strong>Color:</strong>
+            <p>{{pet.color | titlecase}}</p>
+          </div>
+          <div>
             <strong>Location:</strong>
             <p>{{pet.city}}, {{pet.country}}</p>
           </div>
@@ -28,8 +36,10 @@
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">
-            <button [disabled]="pet.user.username === this.authService.decodedToken.unique_name" class="btn btn-primary w-100" >Folow</button>
-            <button  [disabled]="pet.user.username === this.authService.decodedToken.unique_name" class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
+            <button [disabled]="pet.user.username === this.authService.decodedToken.unique_name"
+              class="btn btn-primary w-100">Folow</button>
+            <button [disabled]="pet.user.username === this.authService.decodedToken.unique_name"
+              class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
           </div>
         </div>
       </div>
