@@ -13,6 +13,7 @@ import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
+import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +31,7 @@ export const appRoutes: Routes = [
         resolve: { pet: PetDetailResolver }
       },
       { path: 'messages', component: MessagesComponent },
+      { path: 'pets/regist', component: PetRegistComponent },
       {
         path: 'user/pets/:id', component: UserPetsComponent,
         resolve: { pets: UserPetsResolver }

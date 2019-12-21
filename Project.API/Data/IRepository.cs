@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Project.API.Dtos;
 using Project.API.Models;
 
 namespace Project.API.Data
@@ -14,6 +15,9 @@ namespace Project.API.Data
         Task<Pet> GetPet(int id);
         Task<IEnumerable<Pet>> GetUsersPets(int id);
         Task<bool> SaveAll();
-        
+        Task<Pet> PetRegister(Pet pet);
+        bool PetExists(PetForRegisterDto petForRegisterDto);
+
+
     }
 }

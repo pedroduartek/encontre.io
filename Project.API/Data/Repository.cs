@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Project.API.Dtos;
 using Project.API.Models;
 
 namespace Project.API.Data
@@ -55,9 +56,25 @@ namespace Project.API.Data
             return pets;
         }
 
+
+
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public bool PetExists(PetForRegisterDto petForRegisterDto)
+        {
+            //method to check if the pet already exists
+            return false;
+        }
+
+        public async Task<Pet> PetRegister(Pet pet)
+        {
+            await _context.Pets.AddAsync(pet);
+            await _context.SaveChangesAsync();
+
+            return pet;
         }
     }
 }

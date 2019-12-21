@@ -42,7 +42,7 @@ namespace Project.API.Data
             return true;
         }
 
-        public async Task<User> Register(User user, string password)
+        public async Task<User> UserRegister(User user, string password)
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
@@ -55,6 +55,7 @@ namespace Project.API.Data
 
             return user;
         }
+        
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
@@ -72,5 +73,8 @@ namespace Project.API.Data
 
             return false;
         }
+        
+
+
     }
 }

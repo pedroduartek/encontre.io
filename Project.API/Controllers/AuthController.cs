@@ -39,7 +39,7 @@ namespace Project.API.Controllers
                 Username = userForRegisterDto.Username
             };
 
-            var createdUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
+            var createdUser = await _repo.UserRegister(userToCreate, userForRegisterDto.Password);
 
             return StatusCode(201);
         }

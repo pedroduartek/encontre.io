@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using System;
 using System.Linq;
+using Project.API.Models;
 
 namespace Project.API.Controllers
 {
@@ -62,9 +63,19 @@ namespace Project.API.Controllers
             throw new Exception($"Updating pet {id} failed on save");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Register(PetForRegisterDto petForRegisterDto)
+        {
+            if (_repo.PetExists(petForRegisterDto))
+                return BadRequest("Pet already registered");
 
+            var petToCreate = new Pet();
+            _mapper.Map(petForRegisterDto, petToCreate);
 
+            var createdPet = await _repo.PetRegister(petToCreate);
 
+            return StatusCode(201);
+        }
 
     }
 }

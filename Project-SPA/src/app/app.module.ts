@@ -30,6 +30,7 @@ import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
+import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -55,7 +56,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       PetDetailComponent,
       UserDetailComponent,
       UserPetsComponent,
-      UserEditComponent
+      UserEditComponent,
+      PetRegistComponent
    ],
    imports: [
       BrowserModule,
