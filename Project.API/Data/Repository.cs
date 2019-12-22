@@ -63,9 +63,22 @@ namespace Project.API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public bool PetExists(PetForRegisterDto petForRegisterDto)
+        public async Task<bool> PetExists(PetForRegisterDto petForRegisterDto)
         {
-            //method to check if the pet already exists
+            var pets = await _context.Pets.ToListAsync();
+
+            foreach (var pet in pets)
+            {
+                if (
+                        pet.City == petForRegisterDto.City &
+                        pet.Color == petForRegisterDto.Color &
+                        pet.Country == petForRegisterDto.Country &
+                        pet.Size == petForRegisterDto.Size &
+                        pet.Street == petForRegisterDto.Street
+                    )
+                    return true;
+            }
+
             return false;
         }
 

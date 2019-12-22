@@ -66,7 +66,7 @@ namespace Project.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(PetForRegisterDto petForRegisterDto)
         {
-            if (_repo.PetExists(petForRegisterDto))
+            if (await _repo.PetExists(petForRegisterDto))
                 return BadRequest("Pet already registered");
 
             var petToCreate = new Pet();

@@ -18,7 +18,9 @@ namespace Project.API.Helpers
             CreateMap<User, UserForListDto>();
             CreateMap<User, UserForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
-                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url))
+                .ForMember(dest => dest.NumberOfPets, opt =>
+                    opt.MapFrom(src => src.RegisteredPets.CalculateNumberOfPets()));
             CreateMap<PetPhoto, PetPhotoForDetailedDto>();
             CreateMap<UserPhoto, UserPhotoForDetailedDto>();
             CreateMap<UserForUpdateDto, User>();

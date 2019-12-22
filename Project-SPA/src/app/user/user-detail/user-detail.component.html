@@ -24,6 +24,9 @@
             <strong>Member since:</strong>
             <p>{{user.created}}</p>
           </div>
+          <div *ngIf="user.numberOfPets > 0">
+            <strong>Registered Pets:</strong> {{user.numberOfPets}}
+          </div>
         </div>
         <div class="card-footer">
           <div class="btn-group d-flex">

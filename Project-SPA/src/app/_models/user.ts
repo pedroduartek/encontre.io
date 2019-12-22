@@ -4,6 +4,7 @@ import { Pet } from './pet';
 export interface User {
     id: number;
     username: string;
+    numberOfPets?: number;
     city?: string;
     country?: string;
     email?: string;
