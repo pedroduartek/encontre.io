@@ -14,8 +14,8 @@ export class PetService {
 
   constructor(private http: HttpClient) { }
 
-  getPets(): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'pets');
+  getPets(id: number): Observable<Pet[]> {
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/petslist/'+ id);
   }
 
   getPet(id: number): Observable<Pet> {

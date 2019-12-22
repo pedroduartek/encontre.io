@@ -11,7 +11,7 @@ namespace Project.API.Data
         void Delete<T>(T entity) where T : class;
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(int id);
-        Task<IEnumerable<Pet>> GetPets();
+        Task<IEnumerable<Pet>> GetPets(int id);
         Task<Pet> GetPet(int id);
         Task<IEnumerable<Pet>> GetUsersPets(int id);
         Task<bool> SaveAll();

@@ -5,13 +5,14 @@ import { AlertifyService } from '../_services/alertify.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Pet } from '../_models/pet';
+import { AuthService } from '../_services/auth.service';
 
 @Injectable()
 export class PetListResolver implements Resolve<Pet[]> {
-    constructor(private petSerivce: PetService, private router: Router, private alertify: AlertifyService) { }
+    constructor(private petSerivce: PetService, private router: Router, private alertify: AlertifyService, private authService : AuthService) { }
 
     resolve(route: ActivatedRouteSnapshot): Observable<Pet[]> {
-        return this.petSerivce.getPets().pipe(
+        return this.petSerivce.getPets(this.authService.decodedToken.nameid).pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

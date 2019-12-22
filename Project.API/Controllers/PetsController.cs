@@ -25,10 +25,10 @@ namespace Project.API.Controllers
             _repo = repo;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetPets()
+        [HttpGet("petslist/{id}")]
+        public async Task<IActionResult> GetPets(int id)
         {
-            var pets = await _repo.GetPets();
+            var pets = await _repo.GetPets(id);
             var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
 
             return Ok(petsToReturn);

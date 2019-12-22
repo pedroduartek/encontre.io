@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pet } from 'src/app/_models/pet';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-pet-card',
@@ -9,7 +10,7 @@ import { Pet } from 'src/app/_models/pet';
 export class PetCardComponent implements OnInit {
   @Input() pet: Pet;
 
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

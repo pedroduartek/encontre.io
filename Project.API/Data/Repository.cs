@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Project.API.Dtos;
@@ -31,9 +32,9 @@ namespace Project.API.Data
             return pet;
         }
 
-        public async Task<IEnumerable<Pet>> GetPets()
+        public async Task<IEnumerable<Pet>> GetPets(int id)
         {
-            var pets = await _context.Pets.Include(p => p.Photos).ToListAsync();
+            var pets = await _context.Pets.Include(p => p.Photos).Where(p => p.UserId != id).ToListAsync();
             return pets;
         }
 
