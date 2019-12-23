@@ -14,11 +14,11 @@ import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { MessagesComponent } from './messages/messages.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-import { PetListComponent } from './pets/pet-list/pet-list.component';
+import { PetFoundListComponent } from './pets/pet-foundlist/pet-foundlist.component';
 import { PetCardComponent } from './pets/pet-card/pet-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
-import { PetListResolver } from './_resolvers/pet-list.resolver';
+import { PetFoundListResolver } from './_resolvers/pet-foundlist.resolver';
 import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
 import { AuthGuard } from './_guards/auth.guard';
 import { PetService } from './_services/pet.service';
@@ -33,6 +33,8 @@ import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
 import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
 import { PetEditResolver } from './_resolvers/pet-edit.resolver';
+import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
+import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -53,14 +55,15 @@ export class CustomHammerConfig extends HammerGestureConfig {
       RegisterComponent,
       HomeComponent,
       MessagesComponent,
-      PetListComponent,
+      PetFoundListComponent,
       PetCardComponent,
       PetDetailComponent,
       UserDetailComponent,
       UserPetsComponent,
       UserEditComponent,
       PetRegistComponent,
-      PetEditComponent
+      PetEditComponent,
+      PetLostlistComponent
    ],
    imports: [
       BrowserModule,
@@ -81,7 +84,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
    providers: [
       AuthService,
       ErrorIntercepetorProvider,
-      PetListResolver,
+      PetFoundListResolver,
+      PetLostListResolver,
       AuthGuard,
       PreventUnsavedChanges,
       PetDetailResolver,
