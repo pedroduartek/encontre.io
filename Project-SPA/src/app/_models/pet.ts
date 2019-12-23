@@ -10,6 +10,7 @@ export interface Pet {
     type: string;
     photoUrl: string;
     dateAdded: Date;
+    street?: string;
     user?: User;
     description?: string;
     userId?: number;

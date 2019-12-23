@@ -57,5 +57,14 @@ namespace Project.API.Controllers
 
             throw new Exception($"Updating user {id} failed on save");
         }
+
+        [HttpGet("pets/{id}")]
+        public async Task<IActionResult> GetUsersPets(int id)
+        {
+            var pets = await _repo.GetUsersPets(id);
+            var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
+
+            return Ok(petsToReturn);
+        }
     }
 }

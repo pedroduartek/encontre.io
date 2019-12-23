@@ -49,3 +49,29 @@
     border-top: 1px solid #eee;
     padding: 15px 0;
   }
+
+  .img-thumbnail {
+    margin: 25px;
+    width: 85%;
+    height: 85%;
+}
+
+.card-body{
+    padding: 0 25px;
+
+}
+
+.card-footer{
+    padding: 10px 15px;
+    background-color: #FFF;
+    border-top: none;
+}
+.form-inline {
+  margin-top: 20px;
+}
+
+.form-inline .form-control {
+  margin-right: 10px;
+  margin-left: 5px;
+}
+

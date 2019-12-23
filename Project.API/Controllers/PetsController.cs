@@ -25,7 +25,7 @@ namespace Project.API.Controllers
             _repo = repo;
         }
 
-        [HttpGet("petslist/{id}")]
+        [HttpGet("list/{id}")]
         public async Task<IActionResult> GetPets(int id)
         {
             var pets = await _repo.GetPets(id);
@@ -47,15 +47,16 @@ namespace Project.API.Controllers
         public async Task<IActionResult> UpdatePet(int id, PetForUpdateDto petForUpdadeDto)
         {
             var user = await _repo.GetUser(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
-            var userPets = user.RegisteredPets;
             var petFromRepo = await _repo.GetPet(id);
 
-
-            if (!userPets.Contains(petFromRepo))
+            if (petFromRepo.UserId != user.Id)
                 return Unauthorized();
 
-
             _mapper.Map(petForUpdadeDto, petFromRepo);
+            
+            if (false) //check if there's been any changes mande
+                throw new Exception($"No changes were made");
+            
 
             if (await _repo.SaveAll())
                 return NoContent();
