@@ -51,8 +51,7 @@
           </div>
           <div>
             <strong>Location:</strong>
-            <p>{{pet.city}}, {{pet.country}}</p>
-            <p *ngIf="pet.street">{{pet.street}}</p>
+            <a href="https://www.google.com/maps/place/+{{pet.street}},+{{pet.city}},+{{pet.country}}/" target="blank"><p>{{pet.street}}, {{pet.city}}, {{pet.country}}</p></a>
           </div>
           <div>
             <strong>Added in:</strong>

@@ -1,9 +1,11 @@
-<div class="container" *ngIf="!loggedIn()">
+<div class="container">
   <div class="container mt-5">
     <div *ngIf="!registerMode" style="text-align: center">
+      <h1>[INSERT LOGO HERE]</h1>
+      <br>
       <h1>Find your pet or help someone find his.</h1>
-      <p class="lead">Register so you can see pets found near you.</p>
-      <div class="text-center">
+      <div class="text-center" *ngIf="!loggedIn()">
+        <p class="lead">Register so you can see pets found near you.</p>
         <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()">Register</button>
         <button class="btn btn-info btn-lg">Learn more</button>
       </div>
@@ -22,7 +24,10 @@
 <div class="container mt-5" *ngIf="loggedIn()">
   <div class="text-center">
     <a class="btn btn-primary btn-lg mr-2" [routerLink]="['/pets']">Lost Pets</a>
-    <a class="btn btn-success btn-lg mr-2" [routerLink]="['/user/pets', this.authService.decodedToken.nameid]">Your registered pets</a>
+    <a class="btn btn-success btn-lg mr-2" [routerLink]="['/pets']">Register a lost pet</a>
+    <a class="btn btn-warning btn-lg mr-2" [routerLink]="['/users/pets', this.authService.decodedToken.nameid]">
+      Your registered pets
+    </a>
     <a class="btn btn-info btn-lg" [routerLink]="['/messages']">Messages</a>
   </div>
 </div>
