@@ -3,7 +3,10 @@
     <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active"><img src="../../assets/img/nav-logo.png" alt="nav-logo"> encontre.io</a>
     <ul class="navbar-nav mr-auto" *ngIf="loggedIn()">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/pets']">Lost Pets</a>
+        <a class="nav-link" [routerLink]="['/pets/foundlist']">Found Pets</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/pets/lostlist']">Lost Pets</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/users/pets', this.authService.decodedToken.nameid]">Your registered

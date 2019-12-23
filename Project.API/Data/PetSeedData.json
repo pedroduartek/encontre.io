@@ -7,6 +7,8 @@
     "Type": "dog",
     "Street": "Lott Avenue",
     "Size": "big",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/redbone/n02090379_3711.jpg",
@@ -21,7 +23,9 @@
     "Color": "black",
     "Type": "cat",
     "Street": "Lawn Court",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_897.jpg",
@@ -37,6 +41,8 @@
     "Type": "cat",
     "Street": "Matthews Court",
     "Size": "big",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/appenzeller/n02107908_4190.jpg",
@@ -51,7 +57,9 @@
     "Color": "white",
     "Type": "bird",
     "Street": "Beverly Road",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/terrier-norwich/n02094258_2513.jpg",
@@ -67,6 +75,8 @@
     "Type": "cat",
     "Street": "Irving Avenue",
     "Size": "big",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/retriever-golden/n02099601_1768.jpg",
@@ -82,6 +92,8 @@
     "Type": "dog",
     "Street": "Hunts Lane",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/mexicanhairless/n02113978_697.jpg",
@@ -96,7 +108,9 @@
     "Color": "white",
     "Type": "dog",
     "Street": "Exeter Street",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/schnauzer-giant/n02097130_32.jpg",
@@ -112,6 +126,8 @@
     "Type": "dog",
     "Street": "Nolans Lane",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/briard/n02105251_3436.jpg",
@@ -127,6 +143,8 @@
     "Type": "dog",
     "Street": "Scott Avenue",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_7130.jpg",
@@ -142,6 +160,8 @@
     "Type": "dog",
     "Street": "Croton Loop",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/dachshund/dachshund-in-jacket.jpg",
@@ -156,7 +176,9 @@
     "Color": "gray",
     "Type": "bird",
     "Street": "Hill Street",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/dane-great/n02109047_23814.jpg",
@@ -171,7 +193,9 @@
     "Color": "white",
     "Type": "dog",
     "Street": "Ford Street",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/poodle-standard/n02113799_6715.jpg",
@@ -187,6 +211,8 @@
     "Type": "bird",
     "Street": "Willoughby Street",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/sheepdog-english/n02105641_7902.jpg",
@@ -201,7 +227,9 @@
     "Color": "gold",
     "Type": "cat",
     "Street": "Walker Court",
-    "Size": "smal",
+    "Size": "small",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/ridgeback-rhodesian/n02087394_101.jpg",
@@ -217,6 +245,8 @@
     "Type": "dog",
     "Street": "Fay Court",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/pembroke/n02113023_4310.jpg",
@@ -232,6 +262,8 @@
     "Type": "cat",
     "Street": "Livonia Avenue",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/affenpinscher/n02110627_11584.jpg",
@@ -247,6 +279,8 @@
     "Type": "dog",
     "Street": "Lincoln Terrace",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/keeshond/n02112350_10343.jpg",
@@ -262,6 +296,8 @@
     "Type": "dog",
     "Street": "Cambridge Place",
     "Size": "big",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/dane-great/n02109047_282.jpg",
@@ -277,6 +313,8 @@
     "Type": "dog",
     "Street": "Bay Parkway",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/malamute/n02110063_16713.jpg",
@@ -292,9 +330,96 @@
     "Type": "bird",
     "Street": "Madison Place",
     "Size": "medium",
+	"Active": true,
+	"Found" : true,
     "Photos": [
       {
         "url": "https://images.dog.ceo/breeds/mix/IMG_2840.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 3,
+    "Country": "Barbados",
+    "City": "Rivereno",
+    "Color": "brown and white",
+    "Type": "cat",
+    "Street": "Livonia Avenue",
+    "Size": "medium",
+	"Active": true,
+	"Found" : false,
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/samoyed/n02111889_7041.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Kiribati",
+    "City": "Tivoli",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Lincoln Terrace",
+    "Size": "medium",
+	"Active": true,
+	"Found" : false,
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/spaniel-irish/n02102973_1254.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 2,
+    "Country": "Lebanon",
+    "City": "Springdale",
+    "Color": "brown",
+    "Type": "dog",
+    "Street": "Cambridge Place",
+    "Size": "big",
+	"Active": true,
+	"Found" : false,
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/bluetick/n02088632_1077.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 4,
+    "Country": "Austria",
+    "City": "Iberia",
+    "Color": "white",
+    "Type": "dog",
+    "Street": "Bay Parkway",
+    "Size": "medium",
+	"Active": true,
+	"Found" : false,
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/eskimo/n02109961_2532.jpg",
+        "isMain": true
+      }
+    ]
+  },
+  {
+    "UserId": 1,
+    "Country": "Suriname",
+    "City": "Hiseville",
+    "Color": "white",
+    "Type": "bird",
+    "Street": "Madison Place",
+    "Size": "medium",
+	"Active": true,
+	"Found" : false,
+    "Photos": [
+      {
+        "url": "https://images.dog.ceo/breeds/buhund-norwegian/hakon1.jpg",
         "isMain": true
       }
     ]

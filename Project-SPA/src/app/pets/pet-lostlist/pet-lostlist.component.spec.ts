@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PetListComponent } from './pet-list.component';
+import { PetLostlistComponent } from './pet-lostlist.component';
 
-describe('PetListComponent', () => {
-  let component: PetListComponent;
-  let fixture: ComponentFixture<PetListComponent>;
+describe('PetLostlistComponent', () => {
+  let component: PetLostlistComponent;
+  let fixture: ComponentFixture<PetLostlistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PetListComponent ]
+      declarations: [ PetLostlistComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PetListComponent);
+    fixture = TestBed.createComponent(PetLostlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

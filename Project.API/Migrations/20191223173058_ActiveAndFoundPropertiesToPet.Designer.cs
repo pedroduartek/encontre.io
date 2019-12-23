@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project.API.Data;
 
 namespace Project.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191223173058_ActiveAndFoundPropertiesToPet")]
+    partial class ActiveAndFoundPropertiesToPet
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,9 +44,6 @@ namespace Project.API.Migrations
 
                     b.Property<bool>("Found")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Size")
                         .HasColumnType("TEXT");

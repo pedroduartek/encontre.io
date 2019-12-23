@@ -4,10 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-pet-list',
-  templateUrl: './pet-list.component.html',
-  styleUrls: ['./pet-list.component.css']
+  templateUrl: './pet-foundlist.component.html',
+  styleUrls: ['./pet-foundlist.component.css']
 })
-export class PetListComponent implements OnInit {
+export class PetFoundListComponent implements OnInit {
   pets: Pet[];
 
   constructor(private route: ActivatedRoute) { }

@@ -24,6 +24,13 @@ namespace Project.API.Dtos
         public string Type { get; set; }
         [Required]
         public string Description { get; set; }
+        [Required]
+        public bool Found { get; set; }
+        [Required]
+        public bool Active { get; set; }
+        [Required]
+        public string Gender { get; set; }
+
         public DateTime DateAdded { get; set; }
         public ICollection<PetPhoto> Photos { get; set; }
     }

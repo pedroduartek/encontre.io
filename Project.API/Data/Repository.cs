@@ -28,20 +28,40 @@ namespace Project.API.Data
 
         public async Task<Pet> GetPet(int id)
         {
-            var pet = await _context.Pets.Include(p => p.Photos).Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id);
+            var pet = await _context.Pets
+                .Where(p => p.Active)
+                .Include(p => p.Photos)
+                .Include(p => p.User)
+                .FirstOrDefaultAsync(p => p.Id == id);
             return pet;
         }
 
-        public async Task<IEnumerable<Pet>> GetPets(int id)
+        public async Task<IEnumerable<Pet>> GetFoundPets(int id)
         {
-            var pets = await _context.Pets.Include(p => p.Photos).Where(p => p.UserId != id).ToListAsync();
+            var pets = await _context.Pets
+                .Include(p => p.Photos)
+                .Where(p => p.UserId != id)
+                .Where(p => p.Active)
+                .Where(p => p.Found).ToListAsync();
+            return pets;
+        }
+        public async Task<IEnumerable<Pet>> GetLostPets(int id)
+        {
+            var pets = await _context.Pets
+                .Include(p => p.Photos)
+                .Where(p => p.UserId != id)
+                .Where(p => p.Active)
+                .Where(p => p.Found == false).ToListAsync();
             return pets;
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.Users.Include(u => u.Photos).Include(u => u.RegisteredPets)
-                .ThenInclude(p => p.Photos).FirstOrDefaultAsync(u => u.Id == id);
+            var user = await _context.Users
+                .Include(u => u.Photos)
+                .Include(u => u.RegisteredPets)
+                .ThenInclude(p => p.Photos)
+                .FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
@@ -53,7 +73,10 @@ namespace Project.API.Data
 
         public async Task<IEnumerable<Pet>> GetUsersPets(int id)
         {
-            var pets = await _context.Pets.Include(p => p.Photos).Where(p => p.UserId == id).ToListAsync();
+            var pets = await _context.Pets
+                .Include(p => p.Photos)
+                .Where(p => p.UserId == id)
+                .Where(p => p.Active).ToListAsync();
             return pets;
         }
 
@@ -68,7 +91,7 @@ namespace Project.API.Data
         {
             var pets = await _context.Pets.ToListAsync();
 
-            foreach (var pet in pets)
+            foreach (var pet in pets) //ugly as hell
             {
                 if (
                         pet.City == petForRegisterDto.City &

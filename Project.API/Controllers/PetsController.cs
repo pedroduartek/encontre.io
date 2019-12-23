@@ -25,10 +25,18 @@ namespace Project.API.Controllers
             _repo = repo;
         }
 
-        [HttpGet("list/{id}")]
-        public async Task<IActionResult> GetPets(int id)
+        [HttpGet("found/{id}")]
+        public async Task<IActionResult> GetFoundPets(int id)
         {
-            var pets = await _repo.GetPets(id);
+            var pets = await _repo.GetFoundPets(id);
+            var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
+
+            return Ok(petsToReturn);
+        }
+        [HttpGet("lost/{id}")]
+        public async Task<IActionResult> GetLostPets(int id)
+        {
+            var pets = await _repo.GetLostPets(id);
             var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
 
             return Ok(petsToReturn);
@@ -70,8 +78,7 @@ namespace Project.API.Controllers
             if (await _repo.PetExists(petForRegisterDto))
                 return BadRequest("Pet already registered");
 
-            var petToCreate = new Pet();
-            _mapper.Map(petForRegisterDto, petToCreate);
+            var petToCreate = _mapper.Map<Pet>(petForRegisterDto);
 
             var createdPet = await _repo.PetRegister(petToCreate);
 

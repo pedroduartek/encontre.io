@@ -2,9 +2,9 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
-import { PetListComponent } from './pets/pet-list/pet-list.component';
+import { PetFoundListComponent } from './pets/pet-foundlist/pet-foundlist.component';
 import { PetDetailComponent } from './pets/pet-detail/pet-detail.component';
-import { PetListResolver } from './_resolvers/pet-list.resolver';
+import { PetFoundListResolver } from './_resolvers/pet-foundlist.resolver';
 import { PetDetailResolver } from './_resolvers/pet-detail.resolver';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
@@ -16,6 +16,8 @@ import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
 import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 import { PetEditResolver } from './_resolvers/pet-edit.resolver';
 import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
+import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
+import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,8 +27,12 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'pets', component: PetListComponent,
-        resolve: { pets: PetListResolver }
+        path: 'pets/foundlist', component: PetFoundListComponent,
+        resolve: { pets: PetFoundListResolver }
+      },
+      {
+        path: 'pets/lostlist', component: PetLostlistComponent,
+        resolve: { pets: PetLostListResolver }
       },
       {
         path: 'pets/:id', component: PetDetailComponent,

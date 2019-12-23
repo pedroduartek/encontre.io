@@ -11,5 +11,9 @@ namespace Project.API.Dtos
         public string Size { get; set; }
         public string Type { get; set; }
         public string PhotoUrl { get; set; }
+        public bool Found { get; set; }
+        public bool Active { get; set; }
+        public string Gender { get; set; }
+
     }
 }
