@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Project.API.Models;
 using Microsoft.EntityFrameworkCore;
+using Project.API.Dtos;
 
 namespace Project.API.Data
 {
@@ -13,12 +14,17 @@ namespace Project.API.Data
             _context = context;
 
         }
-        public async Task<User> Login(string username, string password)
+        public async Task<User> Login(string login, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == login);
 
             if (user == null)
-                return null;
+            {
+                user = await _context.Users.FirstOrDefaultAsync(u => u.Email == login);
+                if (user == null)
+                    return null;
+            }
+
 
             if (!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
                 return null;
@@ -55,7 +61,7 @@ namespace Project.API.Data
 
             return user;
         }
-        
+
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
@@ -66,15 +72,15 @@ namespace Project.API.Data
             }
         }
 
-        public async Task<bool> UserExists(string username)
+        public async Task<bool> UserExists(UserForRegisterDto userForRegisterDto)
         {
-            if (await _context.Users.AnyAsync(u => u.Username == username))
+            if (await _context.Users.AnyAsync(u => u.Username == userForRegisterDto.Username))
+                return true;
+
+            if (await _context.Users.AnyAsync(u => u.Email == userForRegisterDto.Email))
                 return true;
 
             return false;
         }
-        
-
-
     }
 }

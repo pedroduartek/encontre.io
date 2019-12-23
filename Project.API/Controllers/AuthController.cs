@@ -9,8 +9,7 @@ using Project.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-
-
+using AutoMapper;
 
 namespace Project.API.Controllers
 {
@@ -20,8 +19,10 @@ namespace Project.API.Controllers
     {
         private readonly IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(IAuthRepository repo, IConfiguration config)
+        private readonly IMapper _mapper;
+        public AuthController(IAuthRepository repo, IConfiguration config, IMapper mapper)
         {
+            _mapper = mapper;
             _config = config;
             _repo = repo;
         }
@@ -31,13 +32,11 @@ namespace Project.API.Controllers
         {
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
-            if (await _repo.UserExists(userForRegisterDto.Username))
-                return BadRequest("Username already exists");
+            if (await _repo.UserExists(userForRegisterDto))
+                return BadRequest("Username or Email already in use");
 
-            var userToCreate = new User
-            {
-                Username = userForRegisterDto.Username
-            };
+            var userToCreate = new User();
+            _mapper.Map(userForRegisterDto, userToCreate);
 
             var createdUser = await _repo.UserRegister(userToCreate, userForRegisterDto.Password);
 

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Router } from '@angular/router';
 import { User } from '../_models/user';
+import { Form, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +13,7 @@ import { User } from '../_models/user';
 export class NavComponent implements OnInit {
   user: User;
   model: any = {};
+
   constructor(
     public authService: AuthService,
     private alertify: AlertifyService,

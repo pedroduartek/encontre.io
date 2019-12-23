@@ -26,6 +26,8 @@ namespace Project.API.Helpers
             CreateMap<UserForUpdateDto, User>();
             CreateMap<PetForUpdateDto, Pet>();
             CreateMap<PetForRegisterDto, Pet>();
+            CreateMap<UserForRegisterDto, User>();
+
 
 
         }

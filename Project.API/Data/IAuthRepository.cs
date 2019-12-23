@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Project.API.Dtos;
 using Project.API.Models;
 
 namespace Project.API.Data
@@ -7,6 +8,6 @@ namespace Project.API.Data
     {
         Task<User> UserRegister(User user, string password);
         Task<User> Login(string username, string password);
-        Task<bool> UserExists(string username);
+        Task<bool> UserExists(UserForRegisterDto userForRegisterDto);
     }
 }
