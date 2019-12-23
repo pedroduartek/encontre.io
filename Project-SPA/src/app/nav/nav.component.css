@@ -1,3 +1,8 @@
 .dropdown, .dropdown-item{
   cursor: pointer;
 }
+
+.navbar-brand{
+  color:black;
+  font-weight: bold;
+}
