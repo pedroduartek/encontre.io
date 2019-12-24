@@ -15,11 +15,11 @@ export class PetService {
   constructor(private http: HttpClient) { }
 
   getFoundPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'pets/found/'+ id);
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/found/' + id);
   }
 
   getLostPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'pets/lost/'+ id);
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/lost/' + id);
   }
 
   getPet(id: number): Observable<Pet> {
@@ -31,7 +31,7 @@ export class PetService {
   }
 
   updatePet(id: number, pet: Pet) {
-    return this.http.put(this.baseUrl + 'pets/' + id, pet);
+    return this.http.put(this.baseUrl + 'pets/update/' + id, pet);
   }
 
 }

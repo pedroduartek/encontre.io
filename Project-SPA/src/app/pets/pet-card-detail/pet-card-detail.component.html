@@ -1,0 +1,53 @@
+<div class="card">
+  <img class=" card-img-top img-thumbnail" src="{{pet.photoUrl}}" alt="{{pet.type}}">
+  <div class="card-body">
+    <div class="row text-center">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div>
+          <strong>Type:</strong>
+          <p>{{pet.type | titlecase}}</p>
+        </div>
+        <div>
+          <strong>Color:</strong>
+          <p>{{pet.color | titlecase}}</p>
+        </div>
+      </div>
+      <div class="col-lg-6  col-md-6 col-sm-12">
+        <div>
+          <strong>Gender:</strong>
+          <p>{{pet.gender | titlecase}}</p>
+        </div>
+        <div>
+          <strong>Size:</strong>
+          <p>{{pet.size | titlecase}}</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <strong>Location:</strong>
+      <a href="https://www.google.com/maps/place/+{{pet.street}},+{{pet.city}},+{{pet.country}}/" target="blank">
+        <p>{{pet.street}}, {{pet.city}}, {{pet.country}}</p>
+      </a>
+    </div>
+    <div>
+      <strong>Added in:</strong>
+      <p>{{pet.dateAdded}}</p>
+    </div>
+    <div *ngIf="pet.userId != this.authService.decodedToken.nameid">
+      <strong>Added by:</strong>
+      <div>
+        <a [routerLink]="['/users/', pet.userId]">
+          <p>
+            {{pet.user.username | titlecase}}
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group d-flex" *ngIf="pet.userId != this.authService.decodedToken.nameid">
+      <button class="btn btn-primary w-100">Folow</button>
+      <button class="btn btn-success w-100">Message {{pet.user.username | titlecase}}</button>
+    </div>
+  </div>
+</div>

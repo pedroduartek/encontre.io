@@ -51,20 +51,20 @@ namespace Project.API.Controllers
             return Ok(petToReturn);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdatePet(int id, PetForUpdateDto petForUpdadeDto)
         {
-            var user = await _repo.GetUser(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             var petFromRepo = await _repo.GetPet(id);
 
-            if (petFromRepo.UserId != user.Id)
+            if (petFromRepo.UserId != userId)
                 return Unauthorized();
 
             _mapper.Map(petForUpdadeDto, petFromRepo);
-            
+
             if (false) //check if there's been any changes mande
                 throw new Exception($"No changes were made");
-            
+
 
             if (await _repo.SaveAll())
                 return NoContent();

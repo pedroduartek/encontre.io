@@ -29,7 +29,7 @@ export class PetEditComponent implements OnInit {
     })
   }
   updatePet() {
-    this.petService.updatePet(this.authService.decodedToken.nameid, this.pet).subscribe(next => {
+    this.petService.updatePet(this.pet.id, this.pet).subscribe(next => {
       this.alertify.success('Pet updated successfully');
       this.editForm.reset(this.pet);
     }, error => {

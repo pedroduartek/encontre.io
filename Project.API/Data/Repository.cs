@@ -74,9 +74,9 @@ namespace Project.API.Data
         public async Task<IEnumerable<Pet>> GetUsersPets(int id)
         {
             var pets = await _context.Pets
-                .Include(p => p.Photos)
                 .Where(p => p.UserId == id)
-                .Where(p => p.Active).ToListAsync();
+                .Where(p => p.Active)
+                .Include(p => p.Photos).ToListAsync();
             return pets;
         }
 

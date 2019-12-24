@@ -35,6 +35,7 @@ import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
 import { PetEditResolver } from './_resolvers/pet-edit.resolver';
 import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
 import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
+import { PetCardDetailComponent } from './pets/pet-card-detail/pet-card-detail.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -63,7 +64,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       UserEditComponent,
       PetRegistComponent,
       PetEditComponent,
-      PetLostlistComponent
+      PetLostlistComponent,
+      PetCardDetailComponent
    ],
    imports: [
       BrowserModule,

@@ -1,67 +1,89 @@
 <div class="container mt-4">
   <div class="row">
+    <div class="col-sm-12">
+      <div *ngIf="editForm.dirty" class="alert alert-info">
+        <strong>Information:</strong> You have made changes. Any unsaved changes will be lost!
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <app-pet-card-detail [pet]="pet"></app-pet-card-detail>
+    </div>
     <div class="col-sm-8">
       <div class="tab-panel">
         <tabset class="member-tabset">
           <tab heading="Edit Pet">
             <form #editForm="ngForm" id="editForm" (ngSubmit)="updatePet()">
-              <h4 class="mt-4">Pet Details</h4>
-              <div class="form-inline">
-                <label for="city">Type:</label>
-                <input class="form-control" type="text" name="type" [(ngModel)]="pet.type">
-                <label for="country">Color:</label>
-                <input class="form-control" type="text" name="color" [(ngModel)]="pet.color">
-                <div class="form-inline">
-                  <label for="country">Size:</label>
-                  <input class="form-control" type="text" name="size" [(ngModel)]="pet.size">
+              <h4>Pet Details</h4>
+              <div class="form-group">
+                <strong>Type:</strong>
+                <div class="form-check-inline ml-3">
+                  <input class="form-check-input" type="radio" name="type" value="dog" [(ngModel)]="pet.type">
+                  <label class="form-check-label" for="dog">Dog</label>
+                </div>
+                <div class="form-check-inline">
+                  <input class="form-check-input" type="radio" name="type" value="cat" [(ngModel)]="pet.type">
+                  <label class="form-check-label" for="cat">Cat</label>
+                </div>
+                <div class="form-check-inline">
+                  <input class="form-check-input" type="radio" name="type" value="bird" [(ngModel)]="pet.type">
+                  <label class="form-check-label" for="bird">Bird</label>
                 </div>
               </div>
+
+              <div class="form-inline">
+                <div class="form-group">
+                  <strong>Gender:</strong>
+                  <div class="form-check-inline ml-3">
+                    <input class="form-check-input" type="radio" name="gender" value="male" [(ngModel)]="pet.gender">
+                    <label class="form-check-label" for="male">Male</label>
+                  </div>
+                  <div class="form-check-inline mr-5">
+                    <input class="form-check-input" type="radio" name="gender" value="female" [(ngModel)]="pet.gender">
+                    <label class="form-check-label" for="female">Female</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <strong>Size:</strong>
+                  <div class="form-check-inline ml-3">
+                    <input class="form-check-input" type="radio" name="size" value="small" [(ngModel)]="pet.size">
+                    <label class="form-check-label" for="small">Small</label>
+                  </div>
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="size" value="medium" [(ngModel)]="pet.size">
+                    <label class="form-check-label" for="medium">Medium</label>
+                  </div>
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" value="big" [(ngModel)]="pet.size">
+                    <label class="form-check-label" for="big">Big</label>
+                  </div>
+                </div>
+              </div>
+
+
               <h4 class="mt-4">Location Details</h4>
               <div class="form-inline">
-                <label for="city">City:</label>
-                <input class="form-control" type="text" name="city" [(ngModel)]="pet.city">
-                <label for="country">Country:</label>
-                <input class="form-control" type="text" name="country" [(ngModel)]="pet.country">
+                <label class="" for="city"><strong>City:</strong></label>
+                <input class="form-control ml-2" type="text" name="city" [(ngModel)]="pet.city">
+                <label for="country"><strong>Country:</strong></label>
+                <input class="form-control ml-2" type="text" name="country" [(ngModel)]="pet.country">
               </div>
               <div class="form-inline">
-                <label for="street">Street:</label>
-                <input class="form-control flex-fill" type="text" name="street" [(ngModel)]="pet.street">
+                <label for="street"><strong>Street:</strong></label>
+                <input class="form-control flex-fill  ml-2" type="text" name="street" [(ngModel)]="pet.street">
               </div>
               <h4 class="mt-4">Description</h4>
-              <textarea name="description" rows="6" class="form-control" [(ngModel)]="pet.description"></textarea>
+              <textarea name="description" rows="5" class="form-control" [(ngModel)]="pet.description"></textarea>
+              <button [disabled]="!editForm.dirty" class="btn btn-success btn-block mt-3">Save
+                Changes</button>
             </form>
           </tab>
           <tab heading="Photos">
             <p>Photo edit will go here</p>
           </tab>
         </tabset>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <img class=" card-img-top img-thumbnail" src="{{pet.photoUrl}}" alt="{{pet.type}}">
-        <div class="card-body">
-          <div>
-            <strong>Type:</strong>
-            <p>{{pet.type | titlecase}}</p>
-          </div>
-          <div>
-            <strong>Color:</strong>
-            <p>{{pet.color | titlecase}}</p>
-          </div>
-          <div>
-            <strong>Location:</strong>
-            <a href="https://www.google.com/maps/place/+{{pet.street}},+{{pet.city}},+{{pet.country}}/" target="blank"><p>{{pet.street}}, {{pet.city}}, {{pet.country}}</p></a>
-          </div>
-          <div>
-            <strong>Added in:</strong>
-            <p>{{pet.dateAdded}}</p>
-          </div>
-        </div>
-        <div class="card-footer">
-          <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save
-            Changes</button>
-        </div>
       </div>
     </div>
   </div>
