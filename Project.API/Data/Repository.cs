@@ -81,7 +81,10 @@ namespace Project.API.Data
         }
 
 
-
+        public bool HasChanges()
+        {
+            return _context.ChangeTracker.HasChanges();
+        }
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;

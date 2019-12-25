@@ -16,6 +16,8 @@ namespace Project.API.Dtos
         public string Type { get; set; }
         public string Street { get; set; }
         public string Gender { get; set; }
+        public bool Active { get; set; }
+        public bool Found { get; set; }
         public string PhotoUrl { get; set; }
         public DateTime DateAdded { get; set; }
         public string Description { get; set; }

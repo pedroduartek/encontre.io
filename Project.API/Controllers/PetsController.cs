@@ -62,7 +62,7 @@ namespace Project.API.Controllers
 
             _mapper.Map(petForUpdadeDto, petFromRepo);
 
-            if (false) //check if there's been any changes mande
+            if (!_repo.HasChanges())
                 throw new Exception($"No changes were made");
 
 

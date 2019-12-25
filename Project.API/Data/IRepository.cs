@@ -16,6 +16,7 @@ namespace Project.API.Data
         Task<Pet> GetPet(int id);
         Task<IEnumerable<Pet>> GetUsersPets(int id);
         Task<bool> SaveAll();
+        bool HasChanges();
         Task<Pet> PetRegister(Pet pet);
         Task<bool> PetExists(PetForRegisterDto petForRegisterDto);
 
