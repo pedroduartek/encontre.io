@@ -13,11 +13,11 @@ import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
-import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 import { PetEditResolver } from './_resolvers/pet-edit.resolver';
 import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
 import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
 import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
+import { PetAddComponent } from './pets/pet-add/pet-add.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,11 +39,12 @@ export const appRoutes: Routes = [
         resolve: { pet: PetDetailResolver }
       },
       {
+        path: 'pets/add', component: PetAddComponent
+      },
+      {
         path: 'pets/edit/:id', component: PetEditComponent,
         resolve: { pet: PetEditResolver }, canDeactivate: [PreventUnsavedChanges]
       },
-      { path: 'messages', component: MessagesComponent },
-      { path: 'pets/regist', component: PetRegistComponent },
       {
         path: 'users/pets/:id', component: UserPetsComponent,
         resolve: { pets: UserPetsResolver }

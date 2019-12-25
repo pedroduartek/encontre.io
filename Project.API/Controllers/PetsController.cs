@@ -72,15 +72,15 @@ namespace Project.API.Controllers
             throw new Exception($"Updating pet {id} failed on save");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Register(PetForRegisterDto petForRegisterDto)
+        [HttpPost("add")]
+        public async Task<IActionResult> Add(PetForRegisterDto petForRegisterDto)
         {
             if (await _repo.PetExists(petForRegisterDto))
                 return BadRequest("Pet already registered");
 
             var petToCreate = _mapper.Map<Pet>(petForRegisterDto);
 
-            var createdPet = await _repo.PetRegister(petToCreate);
+            var createdPet = await _repo.AddPet(petToCreate);
 
             return StatusCode(201);
         }

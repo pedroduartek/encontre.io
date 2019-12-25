@@ -2,9 +2,17 @@
   <div class="container mt-5">
     <div style="text-align: center">
       <h1>You haven't registered any lost animals yet.</h1>
-      <p class="lead">If you want to register one, please click the button above!</p>
-      <div class="text-center">
-        <button class="btn btn-primary btn-lg mr-2">Register a lost pet</button>
+      <div class="text-center mt-4">
+        <h4>Have you lost your pet?</h4>
+        <p>Check our list of pets found by other people or register your pet so someone can find it!</p>
+        <a class="btn btn-success btn-lg mr-2" [routerLink]="['/pets/foundlist']">Found Pets</a>
+        <a class="btn btn-outline-success btn-lg mr-2" [routerLink]="['/home']">Register a lost pet</a>
+      </div>
+      <div class="text-center mt-4">
+        <h4>Found a lost pet in the streets?</h4>
+        <p>Check if someone is looking for him or register it so they can find it here!</p>
+        <a class="btn btn-danger btn-lg mr-2" [routerLink]="['/pets/lostlist']">Lost Pets</a>
+        <a class="btn btn-outline-danger btn-lg mr-2" [routerLink]="['/home']">Register a found pet</a>
       </div>
     </div>
   </div>

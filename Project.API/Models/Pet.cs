@@ -9,7 +9,7 @@ namespace Project.API.Models
         public User User { get; set; }
         public int UserId { get; set; }
         public string Country { get; set; }
-        public string City { get; set; }
+        public string City { get; set; }    
         public string Street { get; set; }
         public string Color { get; set; }
         public string Size { get; set; }

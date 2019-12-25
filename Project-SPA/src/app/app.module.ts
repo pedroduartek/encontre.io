@@ -30,12 +30,12 @@ import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { PreventUnsavedChanges } from './_guards/PreventUnsavedChanges.guard';
-import { PetRegistComponent } from './pets/pet-regist/pet-regist.component';
 import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
 import { PetEditResolver } from './_resolvers/pet-edit.resolver';
 import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
 import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
 import { PetCardDetailComponent } from './pets/pet-card-detail/pet-card-detail.component';
+import { PetAddComponent } from './pets/pet-add/pet-add.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -62,10 +62,10 @@ export class CustomHammerConfig extends HammerGestureConfig {
       UserDetailComponent,
       UserPetsComponent,
       UserEditComponent,
-      PetRegistComponent,
       PetEditComponent,
       PetLostlistComponent,
-      PetCardDetailComponent
+      PetCardDetailComponent,
+      PetAddComponent
    ],
    imports: [
       BrowserModule,

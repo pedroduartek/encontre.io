@@ -109,7 +109,7 @@ namespace Project.API.Data
             return false;
         }
 
-        public async Task<Pet> PetRegister(Pet pet)
+        public async Task<Pet> AddPet(Pet pet)
         {
             await _context.Pets.AddAsync(pet);
             await _context.SaveChangesAsync();

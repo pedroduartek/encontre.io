@@ -11,7 +11,7 @@
   </div>
   <div *ngIf="registerMode">
     <div class="row justify-content-center">
-      <div class="col-4">
+      <div class="col-6">
         <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
       </div>
     </div>
@@ -22,13 +22,13 @@
       <h4>Have you lost your pet?</h4>
       <p>Check our list of pets found by other people or register your pet so someone can find it!</p>
       <a class="btn btn-success btn-lg mr-2" [routerLink]="['/pets/foundlist']">Found Pets</a>
-      <a class="btn btn-outline-success btn-lg mr-2" [routerLink]="['/home']">Register a lost pet</a>
+      <a class="btn btn-outline-success btn-lg mr-2" [routerLink]="['/pets/add']">Register a lost pet</a>
     </div>
     <div class="text-center mt-4">
       <h4>Found a lost pet in the streets?</h4>
       <p>Check if someone is looking for him or register it so they can find it here!</p>
       <a class="btn btn-danger btn-lg mr-2" [routerLink]="['/pets/lostlist']">Lost Pets</a>
-      <a class="btn btn-outline-danger btn-lg mr-2" [routerLink]="['/home']">Register a found pet</a>
+      <a class="btn btn-outline-danger btn-lg mr-2" [routerLink]="['/pets/add']">Register a found pet</a>
     </div>
   </div>
 </div>

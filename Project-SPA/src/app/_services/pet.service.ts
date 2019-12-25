@@ -33,5 +33,8 @@ export class PetService {
   updatePet(id: number, pet: Pet) {
     return this.http.put(this.baseUrl + 'pets/update/' + id, pet);
   }
+  addPet(model: any) {
+    return this.http.put(this.baseUrl + 'pets/add/', model);
+  }
 
 }
