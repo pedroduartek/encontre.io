@@ -35,8 +35,7 @@ namespace Project.API.Controllers
             if (await _repo.UserExists(userForRegisterDto))
                 return BadRequest("Username or Email already in use");
 
-            var userToCreate = new User();
-            _mapper.Map(userForRegisterDto, userToCreate);
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
             var createdUser = await _repo.UserRegister(userToCreate, userForRegisterDto.Password);
 

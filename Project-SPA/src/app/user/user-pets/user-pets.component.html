@@ -1,4 +1,4 @@
-<div class="container" *ngIf="pets.length == 0">
+<div *ngIf="pets.length == 0">
   <div class="container mt-5">
     <div style="text-align: center">
       <h1>You haven't registered any lost animals yet.</h1>
@@ -18,10 +18,8 @@
   </div>
 </div>
 
-<div class="container mt-5">
-  <div class="row">
-    <div *ngFor="let pet of pets" class="col-lg-3 col-md-4 col-sm-6">
-      <app-pet-card [pet]="pet"></app-pet-card>
-    </div>
+<div class="row">
+  <div *ngFor="let pet of pets" class="col-lg-3 col-md-4 col-sm-6">
+    <app-pet-card [pet]="pet"></app-pet-card>
   </div>
 </div>

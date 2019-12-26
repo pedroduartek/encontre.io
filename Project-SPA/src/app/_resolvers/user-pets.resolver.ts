@@ -10,8 +10,8 @@ import { Pet } from '../_models/pet';
 export class UserPetsResolver implements Resolve<Pet[]> {
     constructor(private petSerivce: PetService, private router: Router, private alertify: AlertifyService) { }
 
-    resolve(route: ActivatedRouteSnapshot): Observable<Pet[]> {
-        return this.petSerivce.getUsersPets(route.params['id']).pipe(
+    resolve(): Observable<Pet[]> {
+        return this.petSerivce.getUsersPets().pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

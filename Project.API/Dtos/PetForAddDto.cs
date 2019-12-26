@@ -5,7 +5,7 @@ using Project.API.Models;
 
 namespace Project.API.Dtos
 {
-    public class PetForRegisterDto
+    public class PetForAddDto
     {
         public User User { get; set; }
         [Required]
@@ -33,5 +33,10 @@ namespace Project.API.Dtos
 
         public DateTime DateAdded { get; set; }
         public ICollection<PetPhoto> Photos { get; set; }
+
+        public PetForAddDto()
+        {
+            Active = true;
+        }
     }
 }

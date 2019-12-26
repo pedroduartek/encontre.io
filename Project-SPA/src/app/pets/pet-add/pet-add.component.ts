@@ -20,7 +20,7 @@ export class PetAddComponent implements OnInit {
     this.petService.addPet(this.model).subscribe(
       () => {
         this.alertify.success('Pet added');
-        this.router.navigate(['/home']); //not working
+        this.router.navigate(['/users/pets']);
       },
       error => {
         this.alertify.error(error);

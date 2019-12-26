@@ -26,15 +26,15 @@ export class PetService {
     return this.http.get<Pet>(this.baseUrl + 'pets/' + id);
   }
 
-  getUsersPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'users/pets/' + id);
+  getUsersPets(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(this.baseUrl + 'users/pets/');
   }
 
   updatePet(id: number, pet: Pet) {
     return this.http.put(this.baseUrl + 'pets/update/' + id, pet);
   }
   addPet(model: any) {
-    return this.http.put(this.baseUrl + 'pets/add/', model);
+    return this.http.post(this.baseUrl + 'pets/add', model);
   }
 
 }

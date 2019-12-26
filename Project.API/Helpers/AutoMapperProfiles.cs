@@ -25,7 +25,7 @@ namespace Project.API.Helpers
             CreateMap<UserPhoto, UserPhotoForDetailedDto>();
             CreateMap<UserForUpdateDto, User>();
             CreateMap<PetForUpdateDto, Pet>();
-            CreateMap<PetForRegisterDto, Pet>();
+            CreateMap<PetForAddDto, Pet>();
             CreateMap<UserForRegisterDto, User>();
 
 

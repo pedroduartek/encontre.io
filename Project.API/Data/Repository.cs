@@ -90,18 +90,18 @@ namespace Project.API.Data
             return await _context.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> PetExists(PetForRegisterDto petForRegisterDto)
+        public async Task<bool> PetExists(PetForAddDto petForAddDto)
         {
             var pets = await _context.Pets.ToListAsync();
 
             foreach (var pet in pets) //ugly as hell
             {
                 if (
-                        pet.City == petForRegisterDto.City &
-                        pet.Color == petForRegisterDto.Color &
-                        pet.Country == petForRegisterDto.Country &
-                        pet.Size == petForRegisterDto.Size &
-                        pet.Street == petForRegisterDto.Street
+                        pet.City == petForAddDto.City &
+                        pet.Color == petForAddDto.Color &
+                        pet.Country == petForAddDto.Country &
+                        pet.Size == petForAddDto.Size &
+                        pet.Street == petForAddDto.Street
                     )
                     return true;
             }

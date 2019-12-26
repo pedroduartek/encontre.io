@@ -73,12 +73,13 @@ namespace Project.API.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> Add(PetForRegisterDto petForRegisterDto)
+        public async Task<IActionResult> Add(PetForAddDto petForAddDto)
         {
-            if (await _repo.PetExists(petForRegisterDto))
+            if (await _repo.PetExists(petForAddDto))
                 return BadRequest("Pet already registered");
 
-            var petToCreate = _mapper.Map<Pet>(petForRegisterDto);
+            petForAddDto.UserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var petToCreate = _mapper.Map<Pet>(petForAddDto);
 
             var createdPet = await _repo.AddPet(petToCreate);
 

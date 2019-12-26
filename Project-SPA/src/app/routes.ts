@@ -35,28 +35,28 @@ export const appRoutes: Routes = [
         resolve: { pets: PetLostListResolver }
       },
       {
-        path: 'pets/:id', component: PetDetailComponent,
-        resolve: { pet: PetDetailResolver }
+        path: 'pets/add', component: PetAddComponent
       },
       {
-        path: 'pets/add', component: PetAddComponent
+        path: 'pets/:id', component: PetDetailComponent,
+        resolve: { pet: PetDetailResolver }
       },
       {
         path: 'pets/edit/:id', component: PetEditComponent,
         resolve: { pet: PetEditResolver }, canDeactivate: [PreventUnsavedChanges]
       },
       {
-        path: 'users/pets/:id', component: UserPetsComponent,
+        path: 'users/edit', component: UserEditComponent,
+        resolve: { user: UserEditResolver }, canDeactivate: [PreventUnsavedChanges]
+      },
+      {
+        path: 'users/pets', component: UserPetsComponent,
         resolve: { pets: UserPetsResolver }
       },
       {
         path: 'users/:id', component: UserDetailComponent,
         resolve: { user: UserDetailResolver }
-      },
-      {
-        path: 'user/edit', component: UserEditComponent,
-        resolve: { user: UserEditResolver }, canDeactivate: [PreventUnsavedChanges]
-      }
+      }      
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

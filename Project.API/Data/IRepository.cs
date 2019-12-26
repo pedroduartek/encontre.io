@@ -18,7 +18,7 @@ namespace Project.API.Data
         Task<bool> SaveAll();
         bool HasChanges();
         Task<Pet> AddPet(Pet pet);
-        Task<bool> PetExists(PetForRegisterDto petForRegisterDto);
+        Task<bool> PetExists(PetForAddDto petForAddDto);
 
 
     }
