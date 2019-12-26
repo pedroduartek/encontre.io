@@ -31,6 +31,9 @@ export const appRoutes: Routes = [
         resolve: { pets: PetFoundListResolver }
       },
       {
+        path: 'messages', component: MessagesComponent
+      },
+      {
         path: 'pets/lostlist', component: PetLostlistComponent,
         resolve: { pets: PetLostListResolver }
       },
@@ -56,7 +59,7 @@ export const appRoutes: Routes = [
       {
         path: 'users/:id', component: UserDetailComponent,
         resolve: { user: UserDetailResolver }
-      }      
+      }
     ]
   },
   { path: '**', redirectTo: '', pathMatch: 'full' }

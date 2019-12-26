@@ -1,3 +1,28 @@
-<p>
-  user-card-detail works!
-</p>
+<div class="card">
+  <img class=" card-img-top img-thumbnail" src="{{user.photoUrl}}" onerror="this.src='../../../assets/img/no_photo.png'">
+  <div class="card-body">
+    <div>
+      <strong>Location:</strong>
+      <p>{{user.city}}, {{user.country}}</p>
+    </div>
+    <div>
+      <strong>Last active:</strong>
+      <p>{{user.lastActive}}</p>
+    </div>
+    <div>
+      <strong>Member since:</strong>
+      <p>{{user.created}}</p>
+    </div>
+    <div *ngIf="user.numberOfPets > 0">
+      <strong>Registered Pets:</strong> {{user.numberOfPets}}
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group d-flex">
+      <button [disabled]="user.id === this.authService.decodedToken.nameid"
+        class="btn btn-primary w-100">Folow</button>
+      <button [disabled]="user.id === this.authService.decodedToken.nameid"
+        class="btn btn-success w-100">Message {{user.username | titlecase}}</button>
+    </div>
+  </div>
+</div>

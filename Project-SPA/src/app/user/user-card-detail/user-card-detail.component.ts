@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from 'src/app/_models/user';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-user-card-detail',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-card-detail.component.css']
 })
 export class UserCardDetailComponent implements OnInit {
-
-  constructor() { }
+  @Input() user: User;
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }

@@ -10,27 +10,7 @@
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <div class="card">
-      <img class=" card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
-      <div class="card-body">
-        <div>
-          <strong>Location:</strong>
-          <p>{{user.city}}, {{user.country}}</p>
-        </div>
-        <div>
-          <strong>Last active:</strong>
-          <p>{{user.lastActive}}</p>
-        </div>
-        <div>
-          <strong>Member since:</strong>
-          <p>{{user.created}}</p>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save
-          Changes</button>
-      </div>
-    </div>
+    <app-user-card-detail [user]="user"></app-user-card-detail>
   </div>
   <div class="col-sm-8">
     <div class="tab-panel">
