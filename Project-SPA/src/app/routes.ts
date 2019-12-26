@@ -27,14 +27,12 @@ export const appRoutes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'pets/foundlist', component: PetFoundListComponent,
+        path: 'pets/found', component: PetFoundListComponent,
         resolve: { pets: PetFoundListResolver }
       },
+      
       {
-        path: 'messages', component: MessagesComponent
-      },
-      {
-        path: 'pets/lostlist', component: PetLostlistComponent,
+        path: 'pets/lost', component: PetLostlistComponent,
         resolve: { pets: PetLostListResolver }
       },
       {
@@ -59,6 +57,9 @@ export const appRoutes: Routes = [
       {
         path: 'users/:id', component: UserDetailComponent,
         resolve: { user: UserDetailResolver }
+      },
+      {
+        path: 'messages', component: MessagesComponent
       }
     ]
   },

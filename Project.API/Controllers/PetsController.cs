@@ -25,7 +25,7 @@ namespace Project.API.Controllers
             _repo = repo;
         }
 
-        [HttpGet("found/{id}")]
+        [HttpGet("found")]
         public async Task<IActionResult> GetFoundPets(int id)
         {
             var pets = await _repo.GetFoundPets(id);
@@ -33,10 +33,18 @@ namespace Project.API.Controllers
 
             return Ok(petsToReturn);
         }
-        [HttpGet("lost/{id}")]
-        public async Task<IActionResult> GetLostPets(int id)
+        [HttpGet("deactivated")]
+        public async Task<IActionResult> GetDeactivedPets()
         {
-            var pets = await _repo.GetLostPets(id);
+            var pets = await _repo.GetDeactivatedPets(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+            var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
+
+            return Ok(petsToReturn);
+        }
+        [HttpGet("lost/")]
+        public async Task<IActionResult> GetLostPets()
+        {
+            var pets = await _repo.GetLostPets(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
             var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
 
             return Ok(petsToReturn);
@@ -85,6 +93,25 @@ namespace Project.API.Controllers
 
             return StatusCode(201);
         }
+
+        [HttpPut("activetoggle")]
+        public async Task<IActionResult> ActiveToggle(Pet pet)
+        {
+            var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var petFromRepo = await _repo.GetPet(pet.Id);
+
+            if (petFromRepo.UserId != userId)
+                return Unauthorized();
+
+            _repo.ActiveToggle(petFromRepo);
+
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Deactivating pet {pet.Id} failed on save");
+        }
+
 
     }
 }

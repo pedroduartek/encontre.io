@@ -15,11 +15,14 @@ export class PetService {
   constructor(private http: HttpClient) { }
 
   getFoundPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'pets/found/' + id);
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/found/');
   }
 
   getLostPets(id: number): Observable<Pet[]> {
-    return this.http.get<Pet[]>(this.baseUrl + 'pets/lost/' + id);
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/lost/');
+  }
+  getDeactivatedPets(id: number): Observable<Pet[]> {
+    return this.http.get<Pet[]>(this.baseUrl + 'pets/deactivated');
   }
 
   getPet(id: number): Observable<Pet> {
@@ -35,6 +38,9 @@ export class PetService {
   }
   addPet(model: any) {
     return this.http.post(this.baseUrl + 'pets/add', model);
+  }
+  activeToggle(pet: Pet) {
+    return this.http.put(this.baseUrl + 'pets/activetoggle', pet);
   }
 
 }

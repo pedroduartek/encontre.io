@@ -9,6 +9,7 @@ import { Pet } from 'src/app/_models/pet';
 })
 export class UserPetsComponent implements OnInit {
   pets: Pet[];
+  
 
   constructor(private route: ActivatedRoute) { }
 

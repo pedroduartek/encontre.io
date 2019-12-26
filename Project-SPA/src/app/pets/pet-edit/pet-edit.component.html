@@ -8,9 +8,8 @@
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-4">
     <app-pet-card-detail [pet]="pet"></app-pet-card-detail>
-    <div class="btn-group d-flex mt-2">
-      <button [routerLink]="['/pets/', pet.id]" class="btn btn-danger w-100">Delete</button>
-    </div>
+    <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="btn btn-success btn-block mt-3">Save
+      Changes</button>
   </div>
   <div class="col-sm-8">
     <div class="tab-panel">
@@ -105,9 +104,9 @@
             </div>
             <h4 class="mt-5">Description</h4>
             <textarea name="description" rows="5" class="form-control" [(ngModel)]="pet.description"></textarea>
-            <button [disabled]="!editForm.dirty" type="submit" class="btn btn-success btn-block mt-3">Save
-              Changes</button>
+            <h4 class="mt-5">Danger Zone</h4>
           </form>
+          <button (click)="activeToggle()" class="btn btn-danger">Deactivate Pet</button>
         </tab>
         <tab heading="Photos">
           <p>Photo edit will go here</p>

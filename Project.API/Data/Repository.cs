@@ -54,6 +54,15 @@ namespace Project.API.Data
                 .Where(p => p.Found == false).ToListAsync();
             return pets;
         }
+        public async Task<IEnumerable<Pet>> GetDeactivatedPets(int id)
+        {
+            var pets = await _context.Pets
+                .Include(p => p.Photos)
+                .Where(p => p.UserId == id)
+                .Where(p => p.Active == false)
+                .ToListAsync();
+            return pets;
+        }
 
         public async Task<User> GetUser(int id)
         {
@@ -115,6 +124,14 @@ namespace Project.API.Data
             await _context.SaveChangesAsync();
 
             return pet;
+        }
+
+        public void ActiveToggle(Pet pet)
+        {
+            if (pet.Active)
+                pet.Active = false;
+            else
+                pet.Active = true;
         }
     }
 }

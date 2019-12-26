@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
 import { Pet } from 'src/app/_models/pet';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { PetService } from 'src/app/_services/pet.service';
 import { AuthService } from 'src/app/_services/auth.service';
@@ -21,7 +21,7 @@ export class PetEditComponent implements OnInit {
       $event.returnValue = true;
     }
   }
-  constructor(private route: ActivatedRoute, private alertify: AlertifyService, private petService: PetService, public authService: AuthService) { }
+  constructor(private route: ActivatedRoute, private alertify: AlertifyService, private petService: PetService, public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -35,5 +35,18 @@ export class PetEditComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     })
+  }
+
+  activeToggle() {
+    if (confirm("Are you sure?")) {
+      this.petService.activeToggle(this.pet);
+
+      if (this.pet.active)
+        this.alertify.success('Pet activated successfully');
+      else
+        this.alertify.success('Pet deactivated successfully');
+
+      this.router.navigate(['/users/pets']);
+    }
   }
 }

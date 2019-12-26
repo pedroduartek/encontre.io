@@ -13,12 +13,14 @@ namespace Project.API.Data
         Task<User> GetUser(int id);
         Task<IEnumerable<Pet>> GetFoundPets(int id);
         Task<IEnumerable<Pet>> GetLostPets(int id);
+        Task<IEnumerable<Pet>> GetDeactivatedPets(int id);
         Task<Pet> GetPet(int id);
         Task<IEnumerable<Pet>> GetUsersPets(int id);
         Task<bool> SaveAll();
         bool HasChanges();
         Task<Pet> AddPet(Pet pet);
         Task<bool> PetExists(PetForAddDto petForAddDto);
+        void ActiveToggle(Pet pet);
 
 
     }
