@@ -11,6 +11,8 @@
 <div class="row">
   <div class="col-sm-4">
     <app-user-card-detail [user]="user"></app-user-card-detail>
+    <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="btn btn-success btn-block mt-3">Save
+      Changes</button>
   </div>
   <div class="col-sm-8">
     <div class="tab-panel">

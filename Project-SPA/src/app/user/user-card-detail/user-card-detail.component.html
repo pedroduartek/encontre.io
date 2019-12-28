@@ -17,12 +17,10 @@
       <strong>Registered Pets:</strong> {{user.numberOfPets}}
     </div>
   </div>
-  <div class="card-footer">
+  <div class="card-footer" *ngIf="user.id != this.authService.decodedToken.nameid">
     <div class="btn-group d-flex">
-      <button [disabled]="user.id === this.authService.decodedToken.nameid"
-        class="btn btn-primary w-100">Folow</button>
-      <button [disabled]="user.id === this.authService.decodedToken.nameid"
-        class="btn btn-success w-100">Message {{user.username | titlecase}}</button>
+      <button class="btn btn-primary w-100">Folow</button>
+      <button class="btn btn-success w-100">Message {{user.username | titlecase}}</button>
     </div>
   </div>
 </div>
