@@ -1,6 +1,7 @@
 import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,6 +27,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserService } from './_services/user.service';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { UserPetsResolver } from './_resolvers/user-pets.resolver';
+import { UserDeactivatedPetsResolver } from './_resolvers/user-deactivated-pets.resolver';
 import { UserPetsComponent } from './user/user-pets/user-pets.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
@@ -37,6 +39,7 @@ import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component
 import { PetCardDetailComponent } from './pets/pet-card-detail/pet-card-detail.component';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import { UserCardDetailComponent } from './user/user-card-detail/user-card-detail.component';
+import { PhotoEditorComponent } from './photo-editor/photo-editor.component';
 
 export function getToken() {
    return localStorage.getItem('token');
@@ -67,7 +70,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       PetLostlistComponent,
       PetCardDetailComponent,
       PetAddComponent,
-      UserCardDetailComponent
+      UserCardDetailComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
@@ -77,6 +81,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),
       NgxGalleryModule,
+      FileUploadModule,
       JwtModule.forRoot({
          config: {
             tokenGetter: getToken,
@@ -99,6 +104,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       UserEditResolver,
       UserService,
       PetEditResolver,
+      UserDeactivatedPetsResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],
    bootstrap: [

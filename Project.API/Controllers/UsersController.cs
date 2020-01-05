@@ -66,5 +66,13 @@ namespace Project.API.Controllers
 
             return Ok(petsToReturn);
         }
+        [HttpGet("deactivatePets")]
+        public async Task<IActionResult> GetUsersDeactivatedPets()
+        {
+            var pets = await _repo.GetDeactivatedUsersPets(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
+            var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
+
+            return Ok(petsToReturn);
+        }
     }
 }

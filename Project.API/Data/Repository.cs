@@ -29,7 +29,6 @@ namespace Project.API.Data
         public async Task<Pet> GetPet(int id)
         {
             var pet = await _context.Pets
-                .Where(p => p.Active)
                 .Include(p => p.Photos)
                 .Include(p => p.User)
                 .FirstOrDefaultAsync(p => p.Id == id);
@@ -88,6 +87,14 @@ namespace Project.API.Data
                 .Include(p => p.Photos).ToListAsync();
             return pets;
         }
+        public async Task<IEnumerable<Pet>> GetDeactivatedUsersPets(int id)
+        {
+            var pets = await _context.Pets
+                .Where(p => p.UserId == id)
+                .Where(p => p.Active == false)
+                .Include(p => p.Photos).ToListAsync();
+            return pets;
+        }
 
 
         public bool HasChanges()
@@ -132,6 +139,30 @@ namespace Project.API.Data
                 pet.Active = false;
             else
                 pet.Active = true;
+        }
+
+        public async Task<PetPhoto> GetPetPhoto(int id)
+        {
+            var photo = await _context.PetPhotos.FirstOrDefaultAsync(p => p.Id == id);
+
+            return photo;
+        }
+
+        public async Task<UserPhoto> GetUserPhoto(int id)
+        {
+            var photo = await _context.UserPhotos.FirstOrDefaultAsync(p => p.Id == id);
+
+            return photo;
+        }
+
+        public async Task<UserPhoto> GetMainPhotoForUser(int userId)
+        {
+            return await _context.UserPhotos.Where(p => p.UserId == userId).FirstOrDefaultAsync(p => p.IsMain);
+        }
+
+        public async Task<PetPhoto> GetMainPhotoForPet(int petId)
+        {
+            return await _context.PetPhotos.Where(p => p.PetId == petId).FirstOrDefaultAsync(p => p.IsMain);
         }
     }
 }

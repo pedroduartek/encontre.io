@@ -11,6 +11,7 @@ namespace Project.API.Models
         public bool IsMain { get; set; }
         public Pet Pet { get; set; }
         public int PetId { get; set; }
+        public string PublicId { get; set; }
 
     }
 }

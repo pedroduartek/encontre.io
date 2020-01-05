@@ -26,9 +26,9 @@ namespace Project.API.Controllers
         }
 
         [HttpGet("found")]
-        public async Task<IActionResult> GetFoundPets(int id)
+        public async Task<IActionResult> GetFoundPets()
         {
-            var pets = await _repo.GetFoundPets(id);
+            var pets = await _repo.GetFoundPets(int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value));
             var petsToReturn = _mapper.Map<IEnumerable<PetForListDto>>(pets);
 
             return Ok(petsToReturn);
@@ -94,11 +94,11 @@ namespace Project.API.Controllers
             return StatusCode(201);
         }
 
-        [HttpPut("activetoggle")]
-        public async Task<IActionResult> ActiveToggle(Pet pet)
+        [HttpPut("activeToggle/{id}")]
+        public async Task<IActionResult> ActiveToggle(int id)
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-            var petFromRepo = await _repo.GetPet(pet.Id);
+            var petFromRepo = await _repo.GetPet(id);
 
             if (petFromRepo.UserId != userId)
                 return Unauthorized();
@@ -109,7 +109,7 @@ namespace Project.API.Controllers
             if (await _repo.SaveAll())
                 return NoContent();
 
-            throw new Exception($"Deactivating pet {pet.Id} failed on save");
+            throw new Exception($"Deactivating pet {id} failed on save");
         }
 
 

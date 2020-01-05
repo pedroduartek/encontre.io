@@ -18,6 +18,7 @@ import { PetEditComponent } from './pets/pet-edit/pet-edit.component';
 import { PetLostlistComponent } from './pets/pet-lostlist/pet-lostlist.component';
 import { PetLostListResolver } from './_resolvers/pet-lostlist.resolver';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
+import { UserDeactivatedPetsResolver } from './_resolvers/user-deactivated-pets.resolver';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,7 +53,7 @@ export const appRoutes: Routes = [
       },
       {
         path: 'users/pets', component: UserPetsComponent,
-        resolve: { pets: UserPetsResolver }
+        resolve: { activetedPets: UserPetsResolver, deactivetedPets: UserDeactivatedPetsResolver }
       },
       {
         path: 'users/:id', component: UserDetailComponent,

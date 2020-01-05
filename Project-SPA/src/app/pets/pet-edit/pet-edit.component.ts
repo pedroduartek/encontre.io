@@ -38,15 +38,19 @@ export class PetEditComponent implements OnInit {
   }
 
   activeToggle() {
-    if (confirm("Are you sure?")) {
-      this.petService.activeToggle(this.pet);
-
-      if (this.pet.active)
-        this.alertify.success('Pet activated successfully');
-      else
-        this.alertify.success('Pet deactivated successfully');
-
-      this.router.navigate(['/users/pets']);
-    }
+    this.alertify.confirm("Are you sure?", () => {
+      this.petService.activeToggle(this.pet.id).subscribe(() => {
+        if (this.pet.active) {
+          this.pet.active = false;
+          this.alertify.success('Pet deactivated successfully');
+        }
+        else {
+          this.pet.active = true;
+          this.alertify.success('Pet activated successfully');
+        }
+      }, error => {
+        this.alertify.error("Failed to change pet active status.")
+      });
+    })
   }
 }

@@ -1,10 +1,10 @@
-<div class="card mb-4" [ngClass]="{'bg-success': pet.found, 'bg-danger': !pet.found, 'bg-secondary': !pet.active}" [routerLink]="['/pets/', pet.id]">
+<div class="card mb-4" [ngClass]="{'bg-dark': !pet.active,'bg-success': pet.found, 'bg-danger': !pet.found}" [routerLink]="['/pets/', pet.id]">
   <div class="card-img-wrapper">
     <img class="card-image-top" src="{{pet.photoUrl}}" onerror="this.src='../../../assets/img/no_photo.png'">
   </div>
   <div class="card-body p-1">
     <h6 class="card-title text-center mb-1"><i class="fa fa-paw"></i> {{pet.type | titlecase}}
     </h6>
-    <p class="card-text text-center"><i class="fa fa-map-marker"></i> {{pet.city}}</p>
+    <p class="card-text text-center"><i class="fa fa-map-marker"></i> {{pet.city}} </p>
   </div>
 </div>

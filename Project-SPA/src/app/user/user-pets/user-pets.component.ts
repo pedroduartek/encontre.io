@@ -8,14 +8,15 @@ import { Pet } from 'src/app/_models/pet';
   styleUrls: ['./user-pets.component.css']
 })
 export class UserPetsComponent implements OnInit {
-  pets: Pet[];
-  
+  activatedPets: Pet[];
+  deactivatedPets: Pet[];
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
-      this.pets = data['pets'];
+      this.activatedPets = data['activetedPets'],
+      this.deactivatedPets = data['deactivetedPets']
     })
   }
 

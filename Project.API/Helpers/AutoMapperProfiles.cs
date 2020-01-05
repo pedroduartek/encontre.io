@@ -15,7 +15,9 @@ namespace Project.API.Helpers
             CreateMap<Pet, PetForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
-            CreateMap<User, UserForListDto>();
+            CreateMap<User, UserForListDto>()
+                .ForMember(dest => dest.PhotoUrl, opt =>
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
             CreateMap<User, UserForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url))
@@ -27,6 +29,12 @@ namespace Project.API.Helpers
             CreateMap<PetForUpdateDto, Pet>();
             CreateMap<PetForAddDto, Pet>();
             CreateMap<UserForRegisterDto, User>();
+            CreateMap<PhotoForCreationDto, UserPhoto>();
+            CreateMap<PhotoForCreationDto, PetPhoto>();
+            CreateMap<PhotoForReturnDto, UserPhoto>();
+            CreateMap<UserPhoto, PhotoForReturnDto>();
+            CreateMap<PetPhoto, PhotoForReturnDto>();
+            CreateMap<PhotoForReturnDto, PetPhoto>();
 
 
 

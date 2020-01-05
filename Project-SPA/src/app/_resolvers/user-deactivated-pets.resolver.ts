@@ -7,11 +7,11 @@ import { catchError } from 'rxjs/operators';
 import { Pet } from '../_models/pet';
 
 @Injectable()
-export class UserPetsResolver implements Resolve<Pet[]> {
+export class UserDeactivatedPetsResolver implements Resolve<Pet[]> {
     constructor(private petSerivce: PetService, private router: Router, private alertify: AlertifyService) { }
 
     resolve(): Observable<Pet[]> {
-        return this.petSerivce.getUsersPets().pipe(
+        return this.petSerivce.getUsersDeactivatedPets().pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');
                 this.router.navigate(['/home']);

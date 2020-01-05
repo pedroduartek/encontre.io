@@ -16,11 +16,16 @@ namespace Project.API.Data
         Task<IEnumerable<Pet>> GetDeactivatedPets(int id);
         Task<Pet> GetPet(int id);
         Task<IEnumerable<Pet>> GetUsersPets(int id);
+        Task<IEnumerable<Pet>> GetDeactivatedUsersPets(int id);
         Task<bool> SaveAll();
         bool HasChanges();
         Task<Pet> AddPet(Pet pet);
         Task<bool> PetExists(PetForAddDto petForAddDto);
         void ActiveToggle(Pet pet);
+        Task<PetPhoto> GetPetPhoto(int id);
+        Task<UserPhoto> GetUserPhoto(int id);
+        Task<UserPhoto> GetMainPhotoForUser(int userId);
+        Task<PetPhoto> GetMainPhotoForPet(int petId);
 
 
     }

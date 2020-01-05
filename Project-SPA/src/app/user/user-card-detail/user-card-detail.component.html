@@ -1,5 +1,13 @@
-<div class="card">
-  <img class=" card-img-top img-thumbnail" src="{{user.photoUrl}}" onerror="this.src='../../../assets/img/no_photo.png'">
+<div class="card pb-3">
+
+  <div *ngIf="parent == 'userDetail'">
+    <img class=" card-img-top img-thumbnail" src="{{user.photoUrl}}"
+      onerror="this.src='../../../assets/img/no_photo.png'">
+  </div>
+  <div *ngIf="parent == 'userEdit'">
+    <img class=" card-img-top img-thumbnail" src="{{photoUrl}}" onerror="this.src='../../../assets/img/no_photo.png'">
+  </div>
+
   <div class="card-body">
     <div>
       <strong>Location:</strong>

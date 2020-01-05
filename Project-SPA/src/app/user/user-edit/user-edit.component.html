@@ -10,7 +10,7 @@
 </div>
 <div class="row">
   <div class="col-sm-4">
-    <app-user-card-detail [user]="user"></app-user-card-detail>
+    <app-user-card-detail [parent]="'userEdit'"[photoUrl]="photoUrl" [user]="user"></app-user-card-detail>
     <button [disabled]="!editForm.dirty" form="editForm" type="submit" class="btn btn-success btn-block mt-3">Save
       Changes</button>
   </div>
@@ -29,7 +29,8 @@
           </form>
         </tab>
         <tab heading="Edit Photos">
-          <p>Photo edit will go here</p>
+          <app-photo-editor  [parent]="'user'" [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)">
+          </app-photo-editor>
         </tab>
       </tabset>
     </div>

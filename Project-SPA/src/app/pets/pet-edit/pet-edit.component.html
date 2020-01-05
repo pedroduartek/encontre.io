@@ -14,7 +14,8 @@
   <div class="col-sm-8">
     <div class="tab-panel">
       <tabset class="member-tabset">
-        <tab heading="Edit Pet">
+        <tab heading="Edit Pet Details">
+          <button *ngIf="!pet.active" (click)="activeToggle()" class="btn btn-outline-success btn-block mb-5">Activate Pet</button>
           <form #editForm="ngForm" id="editForm" (ngSubmit)="updatePet()">
             <h4>Pet Details</h4>
             <div class="form-group">
@@ -104,12 +105,12 @@
             </div>
             <h4 class="mt-5">Description</h4>
             <textarea name="description" rows="5" class="form-control" [(ngModel)]="pet.description"></textarea>
-            <h4 class="mt-5">Danger Zone</h4>
+            <h4 *ngIf="pet.active" class="mt-5">Danger Zone</h4>
           </form>
-          <button (click)="activeToggle()" class="btn btn-danger">Deactivate Pet</button>
+          <button *ngIf="pet.active" (click)="activeToggle()" class="btn btn-danger">Deactivate Pet</button>
         </tab>
-        <tab heading="Photos">
-          <p>Photo edit will go here</p>
+        <tab heading="Edit Photos">
+          <app-photo-editor [petId]="pet.id"[parent]="'pet'" [photos]="pet.photos"></app-photo-editor>
         </tab>
       </tabset>
     </div>

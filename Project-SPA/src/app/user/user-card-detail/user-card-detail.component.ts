@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/_services/auth.service';
 })
 export class UserCardDetailComponent implements OnInit {
   @Input() user: User;
+  @Input() photoUrl: string;
+  @Input() parent: string;
   constructor(public authService: AuthService) { }
 
   ngOnInit() {

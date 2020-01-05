@@ -33,14 +33,26 @@ export class PetService {
     return this.http.get<Pet[]>(this.baseUrl + 'users/pets/');
   }
 
+  getUsersDeactivatedPets(): Observable<Pet[]> {
+    return this.http.get<Pet[]>(this.baseUrl + 'users/deactivatePets/');
+  }
+
   updatePet(id: number, pet: Pet) {
     return this.http.put(this.baseUrl + 'pets/update/' + id, pet);
   }
   addPet(model: any) {
     return this.http.post(this.baseUrl + 'pets/add', model);
   }
-  activeToggle(pet: Pet) {
-    return this.http.put(this.baseUrl + 'pets/activetoggle', pet);
+  activeToggle(id: number) {
+    return this.http.put(this.baseUrl + 'pets/activeToggle/' + id, {});
+  }
+
+  setMainPhoto(petId: number, id: number) {
+    return this.http.post(this.baseUrl + 'photos/' + petId + '/setPetMain/' + id, {});
+  }
+
+  deletePhoto(petId: number, id: number) {
+    return this.http.delete(this.baseUrl + 'photos/' + petId + '/deletePetPhoto/' + id);
   }
 
 }

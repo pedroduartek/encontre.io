@@ -16,7 +16,7 @@ namespace Project.API.Data
         }
         public async Task<User> Login(string login, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Username == login);
+            var user = await _context.Users.Include(u => u.Photos).FirstOrDefaultAsync(u => u.Username == login);
 
             if (user == null)
             {
